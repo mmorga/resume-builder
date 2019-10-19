@@ -1,0 +1,116 @@
+body {
+  font-family: arial;
+  font-size: 12px;
+  margin: 1em 5em;
+  background: #fff;
+}
+
+a:link {
+  text-decoration: none;
+  color: #00f;
+}
+
+a:visited {
+  color: #0f0;
+}
+
+a:hover {
+  color: #f0f;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #f03;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #003;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 18px;
+  background-color: #eef;
+}
+
+h3 {
+  font-size: 14px;
+}
+
+h4 {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.section {
+  text-align: left;
+  margin-bottom: 10px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+#header {
+  text-align: right;
+}
+
+#header h1 {
+  margin-bottom: 0px;
+}
+
+#header h2 {
+  margin-top: 0px;
+}
+
+#header #contact {
+  padding: 0px 0px 0px 0px;
+  color: #003;
+}
+
+#contact {
+  text-align: right;
+  margin-bottom: 16px;
+}
+
+#header.subsection {
+  border-style: none none groove none;
+  border-width: medium;
+  border-color: #cccccc;
+}
+
+.subsection {
+  line-height: 17px;
+}
+
+.subsection h3 {
+  display: inline;
+}
+
+.subsection h4 {
+  /* display: inline;*/
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+}
+
+.subsection {
+  margin: 5px 0px 0px 20px;
+}
+
+.subsection .subsection {
+  margin: 5px 0px 0px 30px;
+}
+
+.timePeriod {
+  font-style: italic;
+}
+
+.titleheader h2 {
+  background-color: #fff;
+}
