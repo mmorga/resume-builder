@@ -2,24 +2,27 @@
 %html{class:"no-js", lang:"en-US"}
   %head
     %meta{charset: "utf-8"}
-    %title Mark Edward Morga: R&eacute;sum&eacute;
+    %title Mark Edward Morga
     %style=File.read("style/resume.css")
   %body
     %article.h-resume
       %section.title.p-name
         %h1 Mark Edward Morga
         %address
-          %ul.contact
-            %li New Braunfels, Texas
-            %li (830) 515-2286
-            %li
-              %a{href: "mailto:markmorga@gmail.com"} markmorga@gmail.com
+          New Braunfels, Texas &bull;
+          (830) 515-2286 &bull;
+          %a{href: "mailto:markmorga@gmail.com"} markmorga@gmail.com
 
       %section.summary.p-summary
         %header
           %h2 Professional Summary
 
-        Senior Software Engineer & Principal Architect
+        %p
+          Software Engineer and Principal Architect with more than 25 years of experience building solutions across a variety of domains.
+
+          Brings a record of team leadership and the ability to evolve development processes to suit the needs of the business and to improve the team's productivity and quality.
+
+          Track record of working with customers to determine their needs and adapt appropriate solutions with a focus on usability.
 
       %section.history
         %header
@@ -62,10 +65,8 @@
               %span.dates 2002 — 2004
             .job-title Senior Software Engineer
           %ul
-            %li Developed Foundscan commercial Vulnerability Assessment software components in C++, Java, and PHP as part of development team.
+            %li Developed Foundscan commercial Vulnerability Assessment software components.
             %li Identified and integrated with cryptographic libraries for Java/C++ to encrypt Windows credentials.
-            %li Implemented SOAP messaging between Java Applets and web server portal using kSOAP open source library.
-            %li Implemented Swing based Java applets used to provide a rich user interface for the Foundscan web control panel.
 
         %section.job
           %header
@@ -75,9 +76,8 @@
               %span.dates 2002 — 2002
             .job-title Senior Software Engineer
           %ul
-            %li Developed Commercial Host Intrusion Detection System for Windows and Solaris in C++/Java using the Extreme Programming methodology.
+            %li Developed Commercial Host Intrusion Detection System for Windows and Solaris.
             %li Implemented distribution of Symantec LiveUpdate commands to client machines from system server.
-            %li Implemented web management console user interface Applet plug-ins.
 
         %section.job
           %header
@@ -87,9 +87,8 @@
               %span.dates 2000 — 2002
             .job-title Senior Development Analyst
           %ul
-            %li Developed an aircraft availability estimation application for an Air Force maintenance contract. Application graphs number of impacted aircraft based on a database of equipment impact events, calculations of repair rates, and mean time between failures.
+            %li Developed an aircraft availability parts estimation application for an Air Force maintenance contract.
             %li Designed and developed a web-based system to monitor the status of and store the test results of remote test fixtures.
-            %li Designed a Java application used to perform customer/manufacturer site evaluations using an XML based dynamically generated user interface.
 
         %section.job
           %header
@@ -101,8 +100,6 @@
           %ul
             %li Served as Team Group Lead for a group of four developers.
             %li Developed an application used by representatives to suggest additional USAA services to customers.
-            %li Maintained and enhanced several utility packages with C and COM interfaces in Visual Basic and C++ used by USAA application developers.
-            %li Provided technical assistance, support and guidance for USAA developers, technical writers and representative trainers.
 
         %section.job
           %header
@@ -112,9 +109,9 @@
               %span.dates 1994 — 1997
             .job-title Software Engineer
           %ul
-            %li Ported Windows based C++ communications software application to client/server application on the SunOs 4.1 platform.
-            %li Designed and implemented audio switching and Virtual Keyboard applications for PhotoTelesis custom portable and pen-based PCs.
-            %li Designed and Implemented Windows based Law Enforcement Relational Biographical Imagery Database Application in Visual Basic. Integrated with existing Communications/Imagery Application using OLE Automation, Visual Basic, and C++.
+            %li Ported Windows-based C++ communications software application to SunOs client/server.
+            %li Designed and implemented audio switching and Virtual Keyboard applications for custom portable and pen-based PCs.
+            %li Designed and Implemented Windows based Law Enforcement Relational Biographical Imagery Database Application.
 
         %section.job
           %header
@@ -142,15 +139,19 @@
           %h2 Skills
         %dl
           %dt Languages
-          %dd Ruby, Python, OCaml, C++, Java, SQL, PHP, Perl, Visual Basic, ADA
+          %dd Ruby, Python, OCaml, SQL, JavaScript, TypeScript
+          %dt Frameworks
+          %dd Ruby on Rails, ReactJS
           %dt Development Tools & Technologies
-          %dd Ruby on Rails, Visual C++, MFC, GCC, CGI, Applets, Servlets, COM, Ant, xUnit, InstallSHIELD, PostgreSQL, Oracle, MySQL, SQL Server, DHTML, XML, SOAP, PHP
-          %dt Operating Systems
-          %dd Mac OS X, MS Windows 9x/NT/2000/XP Pro, Solaris, Linux
+          %dd Node, PostgreSQL, MySQL, SQL Server, XML, JSON, REST, Web Services
 
       %section.education
         %header
           %h2 Education
 
-        Southwest Texas State University, San Marcos, Texas
-        Bachelor of Science in Computer Science, 1992.
+        %p
+          %b Bachelor of Science:
+          Computer Science, 1992
+          %br
+          %b Texas State University,
+          San Marcos, Texas

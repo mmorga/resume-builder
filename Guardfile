@@ -68,3 +68,7 @@ guard 'rake', task: :html do
   watch(%r{^style/.+\.css})
   watch(%r{^.+\.haml})
 end
+
+guard 'rake', task: :pdf do
+  watch(%r{^build/.+\.html})
+end
