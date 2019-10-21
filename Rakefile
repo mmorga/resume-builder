@@ -9,8 +9,7 @@ end
 
 file "build/markmorga-resume.pdf": %w[build build/markmorga-resume.html] do
   puts "Building PDF"
-  sh "wkhtmltopdf -s Letter build/markmorga-resume.html build/markmorga-resume.pdf"
-# -B 1in -L 1in -R 1in -T 1in
+  sh "wkhtmltopdf -s Letter -T 1in -B 1in -R 1in -L 1in build/markmorga-resume.html build/markmorga-resume.pdf"
 end
 
 task html: "build/markmorga-resume.html"

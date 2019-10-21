@@ -2,19 +2,14 @@ body {
   background: #fff;
   color: #000;
   font-family: "Avenir Next";
-  font-size: 12pt;
-  margin: 1em 5em;
-}
-
-article {
-  max-width: 7.5in;
+  font-size: 11pt;
 }
 
 /* Links */
 
 a:link {
   text-decoration: none;
-  color: #1c42ff;
+  color: #002;
 }
 
 a:visited {
@@ -35,7 +30,8 @@ a:active {
 h1 {
   color: #112481;
   font-size: 28pt;
-  /*margin: 24pt 0 12pt 0;*/
+  margin: 4pt auto 0.5em auto;
+  text-align: center;
 }
 
 h2 {
@@ -43,21 +39,31 @@ h2 {
   color: #112481;
   display: inline;
   font-size: 18pt;
-  padding: 0 1em;
+  padding: auto 1em;
+  text-align: center;
 }
 
 h3 {
   display: inline;
   font-size: 14pt;
+  text-align: left;
 }
 
 section {
   line-height: 17pt;
-  margin: 1.75em auto 1.25em auto;
+  margin: 1.75em 0 1.25em 0;
   text-align: left;
+  width: 100%;
 }
 
-article > section > header {
+header {
+  text-align: center;
+}
+
+section.job header {
+  text-align: left;
+}
+/*article > section > header {
   background: linear-gradient(180deg,
       rgba(0,0,0,0) calc(50% - 0.12em),
       #1c42ff calc(50%),
@@ -66,41 +72,58 @@ article > section > header {
   text-align: center;
   align-content: center;
 }
-
+*/
 section.job {
+  page-break-inside: avoid;
+  page-break-after: avoid;
+  display: table;
+}
+
+section.skills, section.education {
   page-break-inside: avoid;
   display: table;
 }
-/*  section.job header {
-    display: table;
-    page-break-after: avoid;
-    page-break-inside: avoid;
-  }
-  h3 {
-    display: table;
-    page-break-before: avoid;
-    page-break-after: avoid;
-    page-break-inside: avoid;
-  }
-  .job-title {
-    display: table;
-    page-break-before: avoid;
-    page-break-after: avoid;
-    page-break-inside: avoid;
-  }
-*/
+
+section.education {
+  margin-bottom: 0;
+  text-align: center;
+}
+
 section.title {
+  border: 1pt solid white;
+  margin-top: 0;
   text-align: center;
 }
 
 address {
+  font-size: 125%;
   font-style: normal;
   margin-bottom: 0.5em;
 }
 
-dt {
+table {
+  margin-top: 0.5em;
+}
+
+th {
   font-weight: bold;
 }
+td {
+  font-size: 125%;
+}
+
+th, td {
+  border-top: 1pt solid #1c42ff;
+  padding: 5pt 0;
+}
+
+table tr:first-child th:first-child {
+  border-top: 0;
+}
+table tr:first-child td:last-child {
+  border-top: 0;
+}
+
 ul.contact {
   text-align: center;
 }
@@ -132,11 +155,4 @@ ul.contact li:before {
   font-style: italic;
   font-weight: normal;
   white-space: nowrap;
-}
-
-@media print {
-  @page {
-    margin: 1in 1in;
-    size: letter;
-  }
 }
