@@ -30,39 +30,46 @@ a:active {
 h1 {
   color: #112481;
   font-size: 16pt;
-  margin: 4pt auto 0.5em auto;
+  margin: 4pt auto 0.25em auto;
 }
 
 h2 {
   color: #112481;
-  display: inline;
+  /* display: inline; */
   font-size: 14pt;
+  margin: 4pt auto 0.5em auto;
 }
 
 h3 {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  font-size: 13pt;
+}
+
+h4 {
   display: inline;
   font-size: 12pt;
   font-weight: normal;
 }
 
-section {
+article {
   line-height: 14pt;
   margin: 1.25em 0 1em 0;
   page-break-inside: avoid;
-  text-align: left;
   width: 100%;
 }
 
-section > header {
+article.history {
+  page-break-inside: auto;
+}
+
+article > header {
   border-bottom: 1px solid #112481;
 }
 
-section.job > header {
-  border-bottom: 0;
-}
-
-section.title {
-  margin-top: 0;
+section {
+  page-break-inside: avoid;
+  width: 100%;
 }
 
 address {
@@ -71,32 +78,19 @@ address {
   margin-bottom: 0.5em;
 }
 
-section.history {
-  page-break-inside: auto;
-}
-
 ul {
   margin-top: 0.5em;
   margin-bottom: 0.75em;
   padding-left: 1em;
 }
 
-.job-title {
-  margin: 0 0 0 0;
-  padding: 0 0 0 0;
-  font-size: 14pt;
-  font-weight: bold;
-}
-
-.location {
-  font-size: 90%;
-  font-weight: normal;
-}
-
 .dates {
   float: right;
-  font-size: 90%;
   font-style: italic;
   font-weight: normal;
   white-space: nowrap;
+}
+
+dt {
+  font-weight: bold;
 }

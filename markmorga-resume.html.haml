@@ -5,15 +5,14 @@
     %title Mark Edward Morga
     %style=File.read("style/resume.css")
   %body
-    %article.h-resume
-      %section.title
+    %main.h-resume
+      %header.title
         %h1.p-name Mark Edward Morga
         %address
-          New Braunfels, Texas &#124;
-          (830) 515-2286 &#124;
+          New Braunfels, Texas &#124;          (830) 515-2286 &#124;
           %a{href: "mailto:markmorga@gmail.com"} markmorga@gmail.com
 
-      %section.summary.p-summary
+      %article.summary.p-summary
         %header
           %h2 Professional Summary
 
@@ -26,17 +25,16 @@
 
           Track record of collaborating with customers to produce superior solutions focused on applicability and usability.
 
-      %section.history
+      %article.history
         %header
           %h2 Experience
 
         %section.job
-          %header
-            .job-title Principal Software Engineer
-            %h3
-              %span.company Sophos,
-              %span.location New Braunfels (Remote), Texas
-              %span.dates 2019 - 2025
+          %h3 Principal Software Engineer
+          %h4
+            %span.company Sophos,
+            %span.location New Braunfels (Remote), Texas
+            %span.dates 2019 - 2025
           %ul
             %li Senior Manager of a team of six backend and UI developers
             %li Designed and implemented a backend service in Ruby to process a Kafka stream of sensor events, filter, process, and correlate events and distribute events to downstream services
@@ -49,12 +47,11 @@
                 %li Attend and contribute to bi-weekly meetings to review proposed OpenAPI definitions for public and private APIs for all of Sophos
 
         %section.job
-          %header
-            .job-title Principal Architect
-            %h3
-              %span.company Rackspace Managed Hosting,
-              %span.location San Antonio, Texas
-              %span.dates 2004 — 2019
+          %h3 Principal Architect
+          %h4
+            %span.company Rackspace Managed Hosting,
+            %span.location San Antonio, Texas
+            %span.dates 2004 — 2019
           %ul
             %li Architect of system to integrate and automate Sales to Provisioning of customer systems and services - eliminating manual entry in multiple systems, a major source of error, saving tens of thousands of dollars annually
             %li Architect modernization and expanded functionality of Run Book (monitoring, provisioning, patching) Automation system permitting horizontal scaling of the automation stack and expanding the scope of possible automations
@@ -79,55 +76,55 @@
 
         %section.job
           %header
-            .job-title Senior Software Engineer
-            %h3
-              %span.company Foundstone, Inc.,
-              %span.location San Antonio, Texas
-              %span.dates 2002 — 2004
+          %h3 Senior Software Engineer
+          %h4
+            %span.company Foundstone, Inc.,
+            %span.location San Antonio, Texas
+            %span.dates 2002 — 2004
           %ul
             %li Developed Foundscan commercial Vulnerability Assessment software components
             %li Identified and integrated with cryptographic libraries for Java/C++ to encrypt Windows credentials
 
         %section.job
           %header
-            .job-title Senior Software Engineer
-            %h3
-              %span.company Symantec, Inc.,
-              %span.location San Antonio, Texas
-              %span.dates 2002 — 2002
+          %h3 Senior Software Engineer
+          %h4
+            %span.company Symantec, Inc.,
+            %span.location San Antonio, Texas
+            %span.dates 2002 — 2002
           %ul
             %li Developed Commercial Host Intrusion Detection System for Windows and Solaris
             %li Implemented distribution of Symantec LiveUpdate commands to client machines from system server
 
         %section.job
           %header
-            .job-title Senior Development Analyst
-            %h3
-              %span.company E-Spectrum Technologies, Inc.,
-              %span.location San Antonio, Texas
-              %span.dates 2000 — 2002
+          %h3 Senior Development Analyst
+          %h4
+            %span.company E-Spectrum Technologies, Inc.,
+            %span.location San Antonio, Texas
+            %span.dates 2000 — 2002
           %ul
             %li Developed an aircraft availability parts estimation application for an Air Force maintenance contract
             %li Designed and developed a web-based system to monitor the status of and store the test results of remote test fixtures
 
         %section.job
           %header
-            .job-title IT/Systems Analyst
-            %h3
-              %span.company USAA,
-              %span.location San Antonio, Texas
-              %span.dates 1997 — 2000
+          %h3 IT/Systems Analyst
+          %h4
+            %span.company USAA,
+            %span.location San Antonio, Texas
+            %span.dates 1997 — 2000
           %ul
             %li Served as Team Group Lead for a group of four developers
             %li Developed an application used by representatives to suggest additional USAA services to customers
 
         %section.job
           %header
-            .job-title Software Engineer
-            %h3
-              %span.company PhotoTelesis, Inc.,
-              %span.location San Antonio, Texas
-              %span.dates 1994 — 1997
+          %h3 Software Engineer
+          %h4
+            %span.company PhotoTelesis, Inc.,
+            %span.location San Antonio, Texas
+            %span.dates 1994 — 1997
           %ul
             %li Ported Windows-based C++ communications software application to SunOs client/server
             %li Designed and implemented audio switching and Virtual Keyboard applications for custom portable and pen-based PCs
@@ -135,37 +132,31 @@
 
         %section.job
           %header
-            .job-title Computer Programmer, Associate
-            %h3
-              %span.company Lockheed Engineering & Sciences Co. (Lockheed-Martin),
-              %span.location Austin, Texas
-              %span.dates 1992 — 1994
+          %h3 Computer Programmer, Associate
+          %h4
+            %span.company Lockheed Engineering & Sciences Co. (Lockheed-Martin),
+            %span.location Austin, Texas
+            %span.dates 1992 — 1994
           %ul
             %li Designed and developed the Combat Service Support Training Simulation System (CSSTSS) as a member of the CSSTSS team
             %li Implemented, from Specification, ADA Modules of the Advanced Tomahawk Weapons Control System (ATWCS)
 
-      %section.skills
+      %article.skills
         %header
           %h2 Skills
-        %table
-          %tbody
-            %tr
-              %th Languages
-              %td Ruby, Python, OCaml, SQL, JavaScript, TypeScript
-            %tr
-              %th Techniques
-              %td Unit Testing, TDD/BDD, TOGAF, ArchiMate, RESTful API design
-            %tr
-              %th Development Tools & Technologies
-              %td Ruby on Rails, ReactJS, Node, Git, Atlassian suite, PostgreSQL, MySQL, SQL Server, XML, JSON
+        %dl
+          %dt Languages
+          %dd Ruby, Python, OCaml, SQL, JavaScript, TypeScript
+          %dt Techniques
+          %dd Unit Testing, TDD/BDD, TOGAF, ArchiMate, RESTful API design
+          %dt Development Tools & Technologies
+          %dd Ruby on Rails, ReactJS, Node, Git, Atlassian suite, PostgreSQL, MySQL, SQL Server, XML, JSON
 
-      %section.education
+      %article.education
         %header
           %h2 Education
 
-        %p
-          %b Bachelor of Science:
-          Computer Science, 1992
-          %br
-          %b Texas State University,
-          San Marcos, Texas
+        %b
+          Bachelor of Science in Computer Science
+        %br
+        Texas State University, San Marcos, Texas
