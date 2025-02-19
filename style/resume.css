@@ -31,58 +31,38 @@ h1 {
   color: #112481;
   font-size: 16pt;
   margin: 4pt auto 0.5em auto;
-  text-align: left;
 }
 
 h2 {
-  background: #fff;
   color: #112481;
   display: inline;
   font-size: 14pt;
-  text-align: left;
 }
 
 h3 {
   display: inline;
-  font-size: 13pt;
-  text-align: left;
+  font-size: 12pt;
+  font-weight: normal;
 }
 
 section {
   line-height: 14pt;
   margin: 1.25em 0 1em 0;
+  page-break-inside: avoid;
   text-align: left;
   width: 100%;
 }
 
-header {
-  text-align: left ;
+section > header {
+  border-bottom: 1px solid #112481;
 }
 
-section.job header {
-  text-align: left;
-}
-
-section.job {
-  page-break-inside: avoid;
-  /* page-break-after: avoid; */
-  display: table;
-}
-
-section.skills, section.education {
-  page-break-inside: avoid;
-  display: table;
-}
-
-section.education {
-  margin-bottom: 0;
-  text-align: left;
+section.job > header {
+  border-bottom: 0;
 }
 
 section.title {
-  border: 1pt solid white;
   margin-top: 0;
-  text-align: left;
 }
 
 address {
@@ -91,21 +71,14 @@ address {
   margin-bottom: 0.5em;
 }
 
+section.history {
+  page-break-inside: auto;
+}
+
 ul {
   margin-top: 0.5em;
   margin-bottom: 0.75em;
-}
-
-ul.contact {
-  text-align: center;
-}
-
-ul.contact li {
-  display: inline;
-}
-
-ul.contact li:before {
-  content: "\00B7 ";
+  padding-left: 1em;
 }
 
 .job-title {
