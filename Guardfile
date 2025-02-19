@@ -72,3 +72,7 @@ end
 guard 'rake', task: :pdf do
   watch(%r{^build/.+\.html})
 end
+
+guard 'rake', task: :word do
+  watch(%r{^build/.+\.html})
+end
