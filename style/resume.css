@@ -1,7 +1,7 @@
 body {
   background: #fff;
   color: #000;
-  font-family: "Avenir Next";
+  font-family: "Calibri";
   font-size: 11pt;
 }
 
@@ -29,53 +29,43 @@ a:active {
 
 h1 {
   color: #112481;
-  font-size: 28pt;
+  font-size: 16pt;
   margin: 4pt auto 0.5em auto;
-  text-align: center;
+  text-align: left;
 }
 
 h2 {
   background: #fff;
   color: #112481;
   display: inline;
-  font-size: 18pt;
-  padding: auto 1em;
-  text-align: center;
-}
-
-h3 {
-  display: inline;
   font-size: 14pt;
   text-align: left;
 }
 
+h3 {
+  display: inline;
+  font-size: 13pt;
+  text-align: left;
+}
+
 section {
-  line-height: 17pt;
-  margin: 1.75em 0 1.25em 0;
+  line-height: 14pt;
+  margin: 1.25em 0 1em 0;
   text-align: left;
   width: 100%;
 }
 
 header {
-  text-align: center;
+  text-align: left ;
 }
 
 section.job header {
   text-align: left;
 }
-/*article > section > header {
-  background: linear-gradient(180deg,
-      rgba(0,0,0,0) calc(50% - 0.12em),
-      #1c42ff calc(50%),
-      rgba(0,0,0,0) calc(50% + 0.12em)
-  );
-  text-align: center;
-  align-content: center;
-}
-*/
+
 section.job {
   page-break-inside: avoid;
-  page-break-after: avoid;
+  /* page-break-after: avoid; */
   display: table;
 }
 
@@ -86,42 +76,24 @@ section.skills, section.education {
 
 section.education {
   margin-bottom: 0;
-  text-align: center;
+  text-align: left;
 }
 
 section.title {
   border: 1pt solid white;
   margin-top: 0;
-  text-align: center;
+  text-align: left;
 }
 
 address {
-  font-size: 125%;
+  font-size: 13pt;
   font-style: normal;
   margin-bottom: 0.5em;
 }
 
-table {
+ul {
   margin-top: 0.5em;
-}
-
-th {
-  font-weight: bold;
-}
-td {
-  font-size: 125%;
-}
-
-th, td {
-  border-top: 1pt solid #1c42ff;
-  padding: 5pt 0;
-}
-
-table tr:first-child th:first-child {
-  border-top: 0;
-}
-table tr:first-child td:last-child {
-  border-top: 0;
+  margin-bottom: 0.75em;
 }
 
 ul.contact {
@@ -149,7 +121,6 @@ ul.contact li:before {
 }
 
 .dates {
-  display: inline-block;
   float: right;
   font-size: 90%;
   font-style: italic;
