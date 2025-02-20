@@ -1,4 +1,20 @@
 ---
+meta:
+  description: description
+  keywords: todo
+  author: todo
+  copyright: todo
+  license: todo
+  canonical_link: todo
+  pdf_link: todo
+  twitter:
+    card: todo
+    site: todo
+    creator: todo
+    domain: todo
+    title: todo
+    image: todo
+
 title:
   name: Mark Edward Morga
   address:
@@ -103,9 +119,10 @@ history:
 
 skills:
   title: Skills
-  Languages: Ruby, Python, OCaml, SQL, JavaScript, TypeScript
-  Techniques: Unit Testing, TDD/BDD, TOGAF, ArchiMate, RESTful API design
-  Development Tools & Technologies: Ruby on Rails, ReactJS, Node, Git, Atlassian suite, PostgreSQL, MySQL, SQL Server, XML, JSON
+  content:
+    Languages: Ruby, Python, OCaml, SQL, JavaScript, TypeScript
+    Techniques: Unit Testing, TDD/BDD, TOGAF, ArchiMate, RESTful API design
+    Development Tools & Technologies: Ruby on Rails, ReactJS, Node, Git, Atlassian suite, PostgreSQL, MySQL, SQL Server, XML, JSON
 
 education:
   title: Education

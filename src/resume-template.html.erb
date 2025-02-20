@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="no-js" lang="en-US">
+  <head>
+    <meta charset= "utf-8">
+    <meta name="description" content="<%= meta.description %>" />
+    <meta name="keywords" content="<%= meta.keywords %>" itemprop="keywords" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width, minimum-scale=1" />
+    <meta name="author" content="<%= meta.author %>" itemprop="creator" />
+    <meta name="copyright" content="<%= meta.copyright %>" />
+    <link rel="license" href="<%= meta.license %>" />
+    <link rel="canonical" href="<%= meta.canonical_link %>%" />
+    <link rel="alternate" type="application/pdf" hreflang="en" href="<%= meta.pdf_link %>" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="<%= meta.twitter.card %>" />
+    <meta name="twitter:site" content="<%= meta.twitter.site %>" />
+    <meta name="twitter:creator" content="<%= meta.twitter.creator %>" />
+    <meta name="twitter:domain" content="<%= meta.twitter.domain %>" />
+    <meta name="twitter:description" property="og:description" itemprop="description" content="<%= meta.description%>" />
+    <meta name="twitter:title" property="og:title" content="<%= meta.twitter.title %>" />
+    <meta name="twitter:image" property="og:image" itemprop="image" content="<%= meta.twitter.image %>" />
+    <!-- microformats -->
+    <link href="http://microformats.org/profile/rel-license" rel="profile" />
+    <link href="http://microformats.org/profile/rel-nofollow" rel="profile" />
+    <link href="http://microformats.org/profile/rel-home" rel="profile" />
+    <link href="http://microformats.org/profile/h-resume" rel="profile" />
+    <link href="http://microformats.org/profile/h-card" rel="profile" />
+    <link href="http://microformats.org/profile/h-adr" rel="profile" />
+    <link href="http://microformats.org/profile/h-event" rel="profile" />
+
+    <title><%= title.name %></title>
+    <style>
+      <%= File.read("style/resume.css") %>
+    </style>
+  </head>
+  <body>
+    <main class="h-resume">
+      <header class="title">
+        <h1 class="p-name"><%= title.name %></h1>
+        <address><%= title.address.join("&nbsp;&#124;&nbsp;") %></address>
+      <article class="summary p-summary">
+        <header>
+          <h2><%= summary.title %></h2>
+        </header>
+        <p><%= summary.content.join(" ") %></p>
+      </article>
+      <article class="history">
+        <header>
+          <h2><%= history.title %></h2>
+        </header>
+        <% history.jobs.each do |job| %>
+        <section class="job">
+          <h3><%= job.title %></h3>
+          <h4>
+            <span class="company"><%= job.company %></span>
+            <span class="location"><%= job.location %></span>
+            <span class="dates"><%= job.dates %></span>
+          </h4>
+          <%= nested_list(job.content) %>
+        </section>
+        <% end %>
+      </article>
+      <article class="skills">
+        <header>
+          <h2><%= skills.title %></h2>
+        </header>
+        <dl>
+        <% skills.content.each_pair do |k, v| %>
+          <dt><%= k %></dt>
+          <dd><%= v %></dd>
+        <% end %>
+        </dl>
+      </article>
+      <article class="education">
+        <header>
+          <h2><%= education.title %></h2>
+        </header>
+        <% education.degrees.each do |d| %>
+        <section>
+          <b><%= d.degree %> in <%= d.field %></b>
+          <br/>
+          <%= d.school %>, <%= d.location %>
+        </section>
+        <% end %>
+      </article>
+    </main>
+  </body>
+</html>

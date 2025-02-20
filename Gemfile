@@ -1,7 +1,9 @@
-source 'https://rubygems.org' do
-  gem "guard"
-  gem "guard-bundler"
-  gem "guard-livereload"
-  gem "guard-rake"
-  gem "haml"
-end
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+gem "guard"
+gem "guard-bundler", require: false
+gem "guard-rake"
+
+gem "rubocop", "~> 1.72", require: false

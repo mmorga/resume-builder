@@ -35,21 +35,19 @@ h1 {
 
 h2 {
   color: #112481;
-  /* display: inline; */
   font-size: 14pt;
-  margin: 4pt auto 0.5em auto;
+  margin: 4pt auto 0.25em auto;
 }
 
 h3 {
-  margin: 0 0 0 0;
-  padding: 0 0 0 0;
   font-size: 13pt;
+  margin-bottom: 0.20em;
 }
 
 h4 {
-  display: inline;
   font-size: 12pt;
   font-weight: normal;
+  margin: 0 auto 0.35em auto;
 }
 
 article {
@@ -73,13 +71,13 @@ section {
 }
 
 address {
-  font-size: 13pt;
+  font-size: 12pt;
   font-style: normal;
   margin-bottom: 0.5em;
 }
 
 ul {
-  margin-top: 0.5em;
+  margin-top: 0em;
   margin-bottom: 0.75em;
   padding-left: 1em;
 }

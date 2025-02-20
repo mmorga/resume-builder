@@ -1,0 +1,14 @@
+<ul>
+<% ary.each do |i| %>
+  <li>
+    <% if i.is_a?(Struct) %>
+      <% i.each_pair do |k, v| %>
+        <%= k %>
+        <%= named_nested_list(v) %>
+      <% end %>
+    <% else %>
+      <%= i %>
+    <% end %>
+  </li>
+<% end %>
+</ul>
