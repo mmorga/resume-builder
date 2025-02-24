@@ -34,8 +34,8 @@ history:
   title: Experience
   jobs:
   - title: Principal Software Engineer
-    company: Sophos,
-    location: New Braunfels (Remote), Texas
+    company: Sophos
+    location: (Remote) New Braunfels, Texas
     dates: 2019 - 2025
     content:
     - Senior Manager of a team of six backend and UI developers
@@ -47,7 +47,7 @@ history:
       - Attend and contribute to bi-weekly meetings to review proposed OpenAPI definitions for public and private APIs for all of Sophos
 
   - title: Principal Architect
-    company: Rackspace Managed Hosting,
+    company: Rackspace Managed Hosting
     location: San Antonio, Texas
     dates: 2004 — 2019
     content:
@@ -69,7 +69,7 @@ history:
       - Agile Development Methodology and Pair Programming
 
   - title: Senior Software Engineer
-    company: Foundstone, Inc.,
+    company: Foundstone, Inc.
     location: San Antonio, Texas
     dates: 2002 — 2004
     content:
@@ -77,7 +77,7 @@ history:
     - Identified and integrated with cryptographic libraries for Java/C++ to encrypt Windows credentials
 
   - title: Senior Software Engineer
-    company: Symantec, Inc.,
+    company: Symantec, Inc.
     location: San Antonio, Texas
     dates: 2002 — 2002
     content:
@@ -85,7 +85,7 @@ history:
     - Implemented distribution of Symantec LiveUpdate commands to client machines from system server
 
   - title: Senior Development Analyst
-    company: E-Spectrum Technologies, Inc.,
+    company: E-Spectrum Technologies, Inc.
     location: San Antonio, Texas
     dates: 2000 — 2002
     content:
@@ -93,7 +93,7 @@ history:
     - Designed and developed a web-based system to monitor the status of and store the test results of remote test fixtures
 
   - title: IT/Systems Analyst
-    company: USAA,
+    company: USAA
     location: San Antonio, Texas
     dates: 1997 — 2000
     content:
@@ -101,7 +101,7 @@ history:
     - Developed an application used by representatives to suggest additional USAA services to customers
 
   - title: Software Engineer
-    company: PhotoTelesis, Inc.,
+    company: PhotoTelesis, Inc.
     location: San Antonio, Texas
     dates: 1994 — 1997
     content:
@@ -110,7 +110,7 @@ history:
     - Designed and implemented Law Enforcement Biographical Imagery Database Application
 
   - title: Computer Programmer, Associate
-    company: Lockheed Engineering & Sciences Co. (Lockheed-Martin),
+    company: Lockheed Engineering & Sciences Co. (Lockheed-Martin)
     location: Austin, Texas
     dates: 1992 — 1994
     content:

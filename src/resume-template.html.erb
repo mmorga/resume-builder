@@ -2,11 +2,14 @@
 <html class="no-js" lang="en-US">
   <head>
     <meta charset= "utf-8">
-    <meta name="description" content="<%= meta.description %>" />
-    <meta name="keywords" content="<%= meta.keywords %>" itemprop="keywords" />
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width, minimum-scale=1" />
-    <meta name="author" content="<%= meta.author %>" itemprop="creator" />
+    <meta itemprop="inLanguage" content="en" />
+    <meta name="description" content="<%= meta.description %>" />
+    <meta name="keywords" itemprop="keywords" content="<%= meta.keywords %>" />
+    <meta name="author" itemprop="author" content="<%= meta.author %>" />
     <meta name="copyright" content="<%= meta.copyright %>" />
+    <meta name="generator" content="Mark Morga's Resume Generator">
+    <meta name="keywords" content="HTML, CSS, PDF">
     <link rel="license" href="<%= meta.license %>" />
     <link rel="canonical" href="<%= meta.canonical_link %>%" />
     <link rel="alternate" type="application/pdf" hreflang="en" href="<%= meta.pdf_link %>" />
@@ -36,7 +39,10 @@
     <main class="h-resume">
       <header class="title">
         <h1 class="p-name"><%= title.name %></h1>
-        <address><%= title.address.join("&nbsp;&#124;&nbsp;") %></address>
+        <address>
+          <%= title.address.map {|i| special_format(i) }.join("&nbsp;&#124;&nbsp;") %>
+        </address>
+      </header>
       <article class="summary p-summary">
         <header>
           <h2><%= summary.title %></h2>
@@ -52,6 +58,7 @@
           <h3><%= job.title %></h3>
           <h4>
             <span class="company"><%= job.company %></span>
+            &nbsp;&#124;&nbsp;
             <span class="location"><%= job.location %></span>
             <span class="dates"><%= job.dates %></span>
           </h4>

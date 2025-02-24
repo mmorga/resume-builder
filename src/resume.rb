@@ -4,6 +4,8 @@ require "erb"
 require "yaml"
 
 class Resume
+  EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
   def initialize(hash)
     @resume = structify(hash)
   end
@@ -17,6 +19,14 @@ class Resume
       val.map { |i| structify(i) }
     else
       val
+    end
+  end
+
+  def special_format(str)
+    if str =~ EMAIL_REGEX
+      "<a href=\"mailto:#{str}\">#{str}</a>"
+    else
+      str
     end
   end
 

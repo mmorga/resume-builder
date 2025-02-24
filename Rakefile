@@ -16,7 +16,7 @@ end
 
 file 'build/markmorga-resume.pdf': %w[build build/markmorga-resume.html] do
   puts "Building PDF"
-  sh "weasyprint build/markmorga-resume.html build/markmorga-resume.pdf"
+  sh "weasyprint --custom-metadata build/markmorga-resume.html build/markmorga-resume.pdf"
 end
 
 file 'build/markmorga-resume.docx': %w[build build/markmorga-resume.html] do
