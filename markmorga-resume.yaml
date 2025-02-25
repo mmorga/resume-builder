@@ -1,19 +1,12 @@
 ---
 meta:
-  description: description
-  keywords: todo
-  author: todo
-  copyright: todo
-  license: todo
-  canonical_link: todo
-  pdf_link: todo
-  twitter:
-    card: todo
-    site: todo
-    creator: todo
-    domain: todo
-    title: todo
-    image: todo
+  description: Mark Morga is an experienced software engineer
+  keywords: morga,mark,resume,cv,experience,skills,
+  author: Mark Edward Morga
+  copyright: Mark Edward Morga, 2025, All Rights Reserved.
+  license: https://creativecommons.org/licenses/by-nd/4.0/
+  canonical_link: http://markmorga.com/resume/mark-morga-resume.html
+  pdf_link: http://markmorga.com/resume/mark-morga-resume.pdf
 
 title:
   name: Mark Edward Morga

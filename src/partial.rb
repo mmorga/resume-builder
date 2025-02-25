@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "erb"
+
 class Partial
   EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -29,6 +31,10 @@ class Partial
   def result
     template = ERB.new(@erb_template, trim_mode: '%<>')
     template.result(binding)
+  end
+
+  def metadata
+    meta_tag_list(@data)
   end
 
   def method_missing(symbol, ...)

@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
-require "erb"
-require "yaml"
 require_relative "data"
+require_relative "meta"
 require_relative "partial"
 require_relative "style"
 require_relative "unordered_list"

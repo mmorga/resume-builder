@@ -3,33 +3,9 @@
   <head>
     <meta charset= "utf-8">
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width, minimum-scale=1" />
-    <meta itemprop="inLanguage" content="en" />
-    <meta name="description" content="<%= meta.description %>" />
-    <meta name="keywords" itemprop="keywords" content="<%= meta.keywords %>" />
-    <meta name="author" itemprop="author" content="<%= meta.author %>" />
-    <meta name="copyright" content="<%= meta.copyright %>" />
     <meta name="generator" content="Mark Morga's Resume Generator">
-    <meta name="keywords" content="HTML, CSS, PDF">
-    <link rel="license" href="<%= meta.license %>" />
-    <link rel="canonical" href="<%= meta.canonical_link %>%" />
-    <link rel="alternate" type="application/pdf" hreflang="en" href="<%= meta.pdf_link %>" />
-    <!-- Twitter -->
-    <meta name="twitter:card" content="<%= meta.twitter.card %>" />
-    <meta name="twitter:site" content="<%= meta.twitter.site %>" />
-    <meta name="twitter:creator" content="<%= meta.twitter.creator %>" />
-    <meta name="twitter:domain" content="<%= meta.twitter.domain %>" />
-    <meta name="twitter:description" property="og:description" itemprop="description" content="<%= meta.description%>" />
-    <meta name="twitter:title" property="og:title" content="<%= meta.twitter.title %>" />
-    <meta name="twitter:image" property="og:image" itemprop="image" content="<%= meta.twitter.image %>" />
-    <!-- microformats -->
-    <link href="http://microformats.org/profile/rel-license" rel="profile" />
-    <link href="http://microformats.org/profile/rel-nofollow" rel="profile" />
-    <link href="http://microformats.org/profile/rel-home" rel="profile" />
-    <link href="http://microformats.org/profile/h-resume" rel="profile" />
-    <link href="http://microformats.org/profile/h-card" rel="profile" />
-    <link href="http://microformats.org/profile/h-adr" rel="profile" />
-    <link href="http://microformats.org/profile/h-event" rel="profile" />
 
+    <%= metadata %>
     <title><%= title.name %></title>
     <style>
       <%= style %>

@@ -2,10 +2,20 @@
 
 require "yaml"
 
+class MyStruct < Struct
+  def method_missing(symbol, ...)
+    send(symbol, ...) if members.include?(symbol)
+  end
+
+  def respond_to_missing?(_, _)
+    true
+  end
+end
+
 def structify(val)
   case val
   when Hash
-    cls = Struct.new(*val.keys)
+    cls = MyStruct.new(*val.keys)
     cls.new(*val.values.map { |v| structify(v) })
   when Array
     val.map { |i| structify(i) }
