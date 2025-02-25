@@ -6,12 +6,11 @@ task default: %w[html pdf]
 
 directory "build"
 
-SRC_FILES = FileList.new("build", "markmorga-resume.yaml", "src/**/*", "style/**/*")
+SRC_FILES = FileList.new("build", "markmorga-resume.yaml", "src/**/*", "erb/**/*", "style/**/*")
 
 file 'build/markmorga-resume.html': SRC_FILES do
   puts "Building HTML"
-  build_resume("markmorga-resume.yaml", "src/resume-template.html.erb", "build/markmorga-resume.html")
-  # sh "bundle exec haml render --no-escape-html markmorga-resume.html.haml > build/markmorga-resume.html"
+  build_resume("markmorga-resume.yaml", "erb/resume-template.html.erb", "build/markmorga-resume.html")
 end
 
 file 'build/markmorga-resume.pdf': %w[build build/markmorga-resume.html] do

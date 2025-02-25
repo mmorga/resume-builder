@@ -2,50 +2,30 @@ body {
   background: #fff;
   color: #000;
   font-family: "Calibri";
-  font-size: 11pt;
-}
-
-/* Links */
-
-a:link {
-  text-decoration: none;
-  color: #002;
-}
-
-a:visited {
-  color: #0f0;
-}
-
-a:hover {
-  color: #f0f;
-  text-decoration: underline;
-}
-
-a:active {
-  color: #f03;
+  font-size: 12pt;
 }
 
 /* Headers */
 
 h1 {
   color: #112481;
-  font-size: 16pt;
+  font-size: 1.5rem;
   margin: 4pt auto 0.25em auto;
 }
 
 h2 {
   color: #112481;
-  font-size: 14pt;
+  font-size: 1.3rem;
   margin: 4pt auto 2pt auto;
 }
 
 h3 {
-  font-size: 13pt;
+  font-size: 1.18rem;
   margin: 0.5em auto 0.05em auto;
 }
 
 h4 {
-  font-size: 12pt;
+  font-size: 1.1rem;
   font-weight: normal;
   margin: 0 auto 0.35em auto;
 }
@@ -75,6 +55,7 @@ section {
 address {
   font-size: 12pt;
   font-style: normal;
+  margin-left: 3em;
   margin-bottom: 0.25em;
 }
 
@@ -95,10 +76,47 @@ dt {
   font-weight: bold;
 }
 
+/* Links */
+
+a:link {
+  text-decoration: none;
+  color: #002;
+}
+
+a:visited {
+  color: #0f0;
+}
+
+a:hover {
+  color: #f0f;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #f03;
+}
+
 @media print {
   @page {
     margin: 1in 1in 1in 1in;
     size: letter portrait;
+  }
+
+  @page :right {
+    @bottom-right {
+      content: "<%= title.name %>, " counter(page)
+    }
+  }
+
+  @page :left {
+    @bottom-left {
+      content: "<%= title.name %>, " counter(page)
+    }
+  }
+  @page :first {
+    @bottom-right {
+      content: none
+    }
   }
 }
 

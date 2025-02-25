@@ -32,7 +32,7 @@
 
     <title><%= title.name %></title>
     <style>
-      <%= File.read("style/resume.css") %>
+      <%= style %>
     </style>
   </head>
   <body>
@@ -40,7 +40,7 @@
       <header class="title">
         <h1 class="p-name"><%= title.name %></h1>
         <address>
-          <%= title.address.map {|i| special_format(i) }.join("&nbsp;&#124;&nbsp;") %>
+          <%= title.address.map {|i| link_emails(i) }.join("&nbsp;&#124;&nbsp;") %>
         </address>
       </header>
       <article class="summary p-summary">
@@ -62,7 +62,7 @@
             <span class="location"><%= job.location %></span>
             <span class="dates"><%= job.dates %></span>
           </h4>
-          <%= nested_list(job.content) %>
+          <%= unordered_list(job.content) %>
         </section>
         <% end %>
       </article>

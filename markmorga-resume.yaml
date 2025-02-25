@@ -35,11 +35,12 @@ history:
   jobs:
   - title: Principal Software Engineer
     company: Sophos
-    location: (Remote) New Braunfels, Texas
+    location: New Braunfels, Texas (Remote)
     dates: 2019 - 2025
     content:
     - Senior Manager of a team of six backend and UI developers
     - Designed and implemented a backend service in Ruby to process a Kafka stream of sensor events, filter, process, and correlate events and distribute events to downstream services
+    - Designed a service to provision sensor VMs
     - Implemented, maintained, and contributed a number of Ruby based backend services to support Managed Detection and Response (MDR) product
     - Inherited, created and maintained a number of Java and Spring backend microservices
     - Built a tool to automate sprint report production by integrating Jira, Confluence, and manager input
