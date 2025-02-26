@@ -47,9 +47,13 @@
           <h2><%= skills.title %></h2>
         </header>
         <dl>
+        <% if skills.content.is_a?(Hash) %>
         <% skills.content.each_pair do |k, v| %>
           <dt><%= k %></dt>
           <dd><%= v %></dd>
+        <% end %>
+        <% else %>
+          <%= unordered_list(skills.content) %>
         <% end %>
         </dl>
       </article>

@@ -6,28 +6,39 @@ task default: %w[html pdf]
 
 directory "build"
 
-SRC_FILES = FileList.new("build", "markmorga-resume.yaml", "src/**/*", "erb/**/*", "style/**/*")
+SRC_FILES = FileList.new("build", "*-resume.yaml", "src/**/*", "erb/**/*", "style/**/*")
+YAML_FILES = FileList.new("*-resume.yaml")
+HTML_FILES = YAML_FILES.ext(".html").gsub(/^/, "build/")
+PDF_FILES = YAML_FILES.ext(".pdf").gsub(/^/, "build/")
+DOCX_FILES = YAML_FILES.ext(".docx").gsub(/^/, "build/")
 
-file 'build/markmorga-resume.html': SRC_FILES do
-  puts "Building HTML"
-  build_resume("markmorga-resume.yaml", "erb/resume-template.html.erb", "build/markmorga-resume.html")
+YAML_FILES.each do |yaml_file|
+  html_file = yaml_file.ext(".html").gsub(/^/, "build/")
+  file "#{html_file}": SRC_FILES do
+    puts "Building HTML"
+    build_resume(yaml_file, "erb/resume-template.html.erb", html_file)
+  end
+
+  pdf_file = yaml_file.ext(".pdf").gsub(/^/, "build/")
+  file "#{pdf_file}": html_file do
+    puts "Building PDF"
+    sh "weasyprint --custom-metadata #{html_file} #{pdf_file}"
+  end
+
+  docx_file = yaml_file.ext(".docx").gsub(/^/, "build/")
+  file "#{docx_file}": html_file do
+    puts "Building Word DOCX"
+    sh "pandoc -s #{html_file} -o #{docx_file}"
+  end
 end
 
-file 'build/markmorga-resume.pdf': %w[build build/markmorga-resume.html] do
-  puts "Building PDF"
-  sh "weasyprint --custom-metadata build/markmorga-resume.html build/markmorga-resume.pdf"
-end
+task html: HTML_FILES
 
-file 'build/markmorga-resume.docx': %w[build build/markmorga-resume.html] do
-  puts "Building Word DOCX"
-  sh "pandoc -s build/markmorga-resume.html -o build/markmorga-resume.docx"
-end
+task pdf: [:html, PDF_FILES].flatten
 
-task html: "build/markmorga-resume.html"
+task word: [:html, DOCX_FILES].flatten
 
-task pdf: [:html, "build/markmorga-resume.pdf"]
-
-task word: [:html, "build/markmorga-resume.docx"]
+task all: %i[html pdf word]
 
 task :clean do
   rm_r "build"
