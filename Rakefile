@@ -15,19 +15,19 @@ DOCX_FILES = YAML_FILES.ext(".docx").gsub(/^/, "build/")
 YAML_FILES.each do |yaml_file|
   html_file = yaml_file.ext(".html").gsub(/^/, "build/")
   file "#{html_file}": SRC_FILES do
-    puts "Building HTML"
+    puts "Building HTML: #{html_file}"
     build_resume(yaml_file, "erb/resume-template.html.erb", html_file)
   end
 
   pdf_file = yaml_file.ext(".pdf").gsub(/^/, "build/")
   file "#{pdf_file}": html_file do
-    puts "Building PDF"
+    puts "Building PDF: #{pdf_file}"
     sh "weasyprint --custom-metadata #{html_file} #{pdf_file}"
   end
 
   docx_file = yaml_file.ext(".docx").gsub(/^/, "build/")
   file "#{docx_file}": html_file do
-    puts "Building Word DOCX"
+    puts "Building Word DOCX: #{docx_file}"
     sh "pandoc -s #{html_file} -o #{docx_file}"
   end
 end
