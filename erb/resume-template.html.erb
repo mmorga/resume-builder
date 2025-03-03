@@ -1,6 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="en-US">
-  <head>
+  <head profile="http://dublincore.org/specifications/dublin-core/dc-html/2008-08-04/">
+    <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" >
     <meta charset= "utf-8">
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width, minimum-scale=1" />
     <meta name="generator" content="Mark Morga's Resume Generator">
@@ -46,16 +47,16 @@
         <header>
           <h2><%= skills.title %></h2>
         </header>
-        <dl>
         <% if skills.content.is_a?(Hash) %>
+        <dl>
         <% skills.content.each_pair do |k, v| %>
           <dt><%= k %></dt>
           <dd><%= v %></dd>
         <% end %>
+        </dl>
         <% else %>
           <%= unordered_list(skills.content) %>
         <% end %>
-        </dl>
       </article>
       <article class="education">
         <header>

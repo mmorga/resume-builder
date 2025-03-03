@@ -1,11 +1,15 @@
 # frozen_string_literal: true
 
+require "date"
+
 HEAD_META = [
   ->(meta) { tag(:meta, itemprop: "inLanguage", content: meta&.language || "en") },
   ->(meta) { tag(:meta, name: "description", content: meta.description) if meta&.description },
   ->(meta) { tag(:meta, name: "keywords", itemprop: "keywords", content: meta.keywords) if meta&.keywords },
   ->(meta) { tag(:meta, name: "author", itemprop: "author", content: meta.author) if meta&.author },
   ->(meta) { tag(:meta, name: "copyright", content: meta.copyright) if meta&.copyright },
+  ->(meta) { tag(:meta, name: "DCTERMS.created", content: meta&.created ? meta.created : DateTime.now.iso8601) },
+  ->(_) { tag(:meta, name: "DCTERMS.modified", content: DateTime.now.iso8601) },
   ->(meta) { tag(:link, rel: "license", href: meta.license) if meta&.license },
   ->(meta) { tag(:link, rel: "canonical", href: meta.canonical_link) },
   ->(meta) { tag(:link, rel: "alternate", type: "application/pdf", href: meta.pdf_link) if meta&.pdf_link },
