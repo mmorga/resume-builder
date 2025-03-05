@@ -3,6 +3,7 @@
 module ResumeYaml
   class Resume
     include YamlMapping
+
     attr_reader :meta, :title, :summary, :history, :skills, :education
 
     output_yaml_order :meta, :title, :summary, :history, :skills, :education

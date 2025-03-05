@@ -3,6 +3,7 @@
 module ResumeYaml
   class Education
     include YamlMapping
+
     attr_reader :title, :degrees
 
     output_yaml_order :title, :degrees

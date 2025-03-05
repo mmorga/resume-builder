@@ -3,6 +3,7 @@
 module ResumeYaml
   class History
     include YamlMapping
+
     attr_reader :title, :jobs
 
     output_yaml_order :title, :jobs

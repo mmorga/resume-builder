@@ -3,6 +3,7 @@
 module ResumeYaml
   class Title
     include YamlMapping
+
     attr_accessor :name
     attr_reader :address
 

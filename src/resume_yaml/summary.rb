@@ -3,6 +3,7 @@
 module ResumeYaml
   class Summary
     include YamlMapping
+
     attr_reader :title, :content
 
     output_yaml_order :title, :content

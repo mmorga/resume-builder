@@ -3,6 +3,7 @@
 module ResumeYaml
   class Job
     include YamlMapping
+
     attr_accessor :title, :company, :location, :dates
     attr_reader :content
 

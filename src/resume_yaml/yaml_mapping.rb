@@ -17,7 +17,9 @@ module ResumeYaml
       end
 
       def yaml_order
-        @yaml_order || instance_variables
+        return @yaml_order if instance_variable_defined?(:@yaml_order)
+
+        []
       end
     end
 
@@ -42,6 +44,7 @@ module ResumeYaml
       mapping
     end
 
+    # rubocop:disable Metrics/MethodLength
     def yaml_ast_of(obj)
       case obj
       when Integer
@@ -58,10 +61,22 @@ module ResumeYaml
         raise "Need to handle #{obj.class}\n#{obj.inspect}\n"
       end
     end
+    # rubocop:enable Metrics/MethodLength
+
+    def yaml_order
+      order = self.class.yaml_order
+      missing_syms = instance_variables.map { |s| s.to_s[1..].to_sym }.sort - order
+      unless missing_syms.empty?
+        order |= missing_syms
+        warn "#{self.class.name} output_yaml_order is missing: #{missing_syms.inspect}, using order: #{order}"
+      end
+
+      order
+    end
 
     def to_yaml_ast
       mapping = Psych::Nodes::Mapping.new
-      self.class.yaml_order.each do |sym|
+      yaml_order.each do |sym|
         mapping.children << Psych::Nodes::Scalar.new(sym.to_s)
         mapping.children << yaml_ast_of(send(sym))
       end
