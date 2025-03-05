@@ -38,7 +38,7 @@ class Partial
   end
 
   def method_missing(symbol, ...)
-    if data.members.include?(symbol)
+    if data.public_methods.include?(symbol)
       @data.send(symbol, ...)
     else
       super

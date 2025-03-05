@@ -3,9 +3,11 @@
     "DCTERMS",
     "homebrew",
     "itemprop",
+    "jste",
     "microformats",
     "ostructify",
-    "structify",
+    "SFNS",
+    "tidyrc",
     "weasyprint"
   ]
 }
