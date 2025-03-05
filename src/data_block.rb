@@ -14,25 +14,6 @@ class DataBlock
       .each { |sym| send(sym, hash[sym.to_s[..-2]]) }
   end
 
-  def deep_hash(val)
-    case val
-    when DataBlock
-      val.to_hash
-    when Array
-      val.map { |i| deep_hash(i) }
-    when Hash
-      val.transform_values { |i| deep_hash(i) }
-    else
-      val
-    end
-  end
-
-  def to_hash
-    instance_variables.each_with_object({}) do |sym, hash|
-      hash[sym.to_s[1..]] = deep_hash(instance_variable_get(sym))
-    end
-  end
-
   def yaml_ast_of_array(obj)
     seq = Psych::Nodes::Sequence.new
     obj.each do |o|
