@@ -2,7 +2,7 @@
 
 $LOAD_PATH.unshift File.join(File.dirname(__FILE__), "src")
 
-require "resume"
+require "resume_builder"
 
 directory "build"
 

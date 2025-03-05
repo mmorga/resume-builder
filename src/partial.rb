@@ -2,6 +2,7 @@
 
 require "erb"
 require "meta_tag_list"
+
 autoload(:Style, "style.rb")
 autoload(:UnorderedList, "unordered_list.rb")
 
