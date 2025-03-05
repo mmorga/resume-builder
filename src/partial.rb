@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 require "erb"
+require "meta_tag_list"
+autoload(:Style, "style.rb")
+autoload(:UnorderedList, "unordered_list.rb")
 
 class Partial
   EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

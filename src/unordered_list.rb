@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "partial"
+require "partial"
 
 class UnorderedList < Partial
   attr_reader :ary

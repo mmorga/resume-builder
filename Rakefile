@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "src/resume"
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), "src")
+
+require "resume"
 
 directory "build"
 
