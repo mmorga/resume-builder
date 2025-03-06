@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/mmorga/resume-builder#readme",
   "dependencies": {
-    "html-validate": "^9.4.1",
-    "prettier": "^3.5.3"
+    "html-validate": "^9.4.1"
   }
 }

@@ -20,6 +20,7 @@ YAML_FILES.each do |yaml_file|
     puts "Building HTML: #{html_file}"
     build_resume(yaml_file, "erb/resume-template.html.erb", html_file)
     sh "tidy -config .tidyrc -m #{html_file}"
+    sh "npx html-validate --preset recommended --formatter stylish #{html_file}"
   end
 
   pdf_file = yaml_file.ext(".pdf").gsub(/^/, "build/")

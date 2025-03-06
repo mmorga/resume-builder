@@ -17,7 +17,7 @@ HEAD_META = [
 
   ->(meta) { tag(:link, rel: "license", href: meta.license) if meta&.license },
 
-  ->(meta) { tag(:link, rel: "canonical", href: meta.canonical_link) },
+  ->(meta) { tag(:link, rel: "canonical", href: meta.canonical_link) if meta.canonical_link },
   ->(meta) { tag(:link, rel: "alternate", type: "application/pdf", href: meta.pdf_link) if meta&.pdf_link },
 
   ->(meta) { tag(:meta, name: "twitter:card", content: meta.twitter.card) if meta&.twitter&.card },
