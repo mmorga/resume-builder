@@ -37,7 +37,7 @@
             <span class="company"><%= job.company %></span>
             &nbsp;&#124;&nbsp;
             <span class="location"><%= job.location %></span>
-            <span class="dates"><%= job.dates %></span>
+            <span class="dates"><%= [job.start_date, job.end_date].join("&nbsp;&ndash;&nbsp;") %></span>
           </h4>
           <%= unordered_list(job.content) %>
         </section>
@@ -64,7 +64,7 @@
         </header>
         <% education.degrees.each do |d| %>
         <section>
-          <b><%= d.degree %> in <%= d.field %></b>
+          <b><%= d.education_level %> in <%= d.field %></b>
           <br/>
           <%= d.school %>, <%= d.location %>
         </section>

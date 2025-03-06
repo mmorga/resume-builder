@@ -1,7 +1,7 @@
 <ul>
 <% ary.each do |i| %>
   <li>
-    <% if i.is_a?(Struct) %>
+    <% if i.is_a?(Hash) %>
       <% i.each_pair do |k, v| %>
         <%= k %>
         <%= unordered_list(v) %>

@@ -6,9 +6,14 @@ module ResumeYaml
       def from_hash(hash)
         hash ||= {}
         db = new
+
         db.public_methods(false)
           .select { |sym| sym.to_s.end_with?("=") }
           .each { |sym| db.send(sym, hash[sym.to_s[..-2]]) }
+
+        ext = hash.keys - db.instance_variables.map { |i| i.to_s[1..] }
+        warn "#{db.class.name} YAML instance had unexpected keys: #{ext}" unless ext.empty?
+
         db
       end
 

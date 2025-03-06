@@ -23,11 +23,24 @@ meta:
   address_region: Texas
   postal_code: 78132
   address_country: US
-  same_as:
-  - https://github.com/mmorga
-  - https://twitter.com/mmorga
-  - https://www.facebook.com/markmorga
-
+  contact_points:
+  - contact_type: GitHub
+    identifier: https://github.com/mmorga
+    image:
+    url: https://github.com/mmorga
+  - contact_type: X
+    identifier: https://twitter.com/mmorga
+    image:
+    url: https://twitter.com/mmorga
+  - contact_type: Facebook
+    identifier: https://www.facebook.com/markmorga
+    image:
+    url: https://www.facebook.com/markmorga
+  occupation:
+    role_name:
+    start_date:
+  works_for:
+  
 title:
   name: Mark Edward Morga
   address:
@@ -49,7 +62,8 @@ history:
   - title: Principal Software Engineer
     company: Sophos
     location: New Braunfels, Texas (Remote)
-    dates: 2019 - 2025
+    start_date: 2019
+    end_date: 2025
     content:
     - Senior Manager of a team of six backend and UI developers
     - Designed and implemented a backend service in Ruby to process a Kafka stream of sensor events, filter, process, and correlate events and distribute events to downstream services
@@ -63,7 +77,8 @@ history:
   - title: Principal Architect
     company: Rackspace Managed Hosting
     location: San Antonio, Texas
-    dates: 2004 — 2019
+    start_date: 2004
+    end_date: 2019
     content:
     - Architect of system to integrate and automate Sales to Provisioning of customer systems and services - eliminating manual entry in multiple systems, a major source of error, saving tens of thousands of dollars annually
     - Architect modernization and expanded functionality of Run Book (monitoring, provisioning, patching) Automation system permitting horizontal scaling of the automation stack and expanding the scope of possible automations
@@ -85,7 +100,8 @@ history:
   - title: Senior Software Engineer
     company: Foundstone, Inc.
     location: San Antonio, Texas
-    dates: 2002 — 2004
+    start_date: 2002
+    end_date: 2004
     content:
     - Developed Foundscan commercial Vulnerability Assessment software components
     - Identified and integrated with cryptographic libraries for Java/C++ to encrypt Windows credentials
@@ -93,7 +109,8 @@ history:
   - title: Senior Software Engineer
     company: Symantec, Inc.
     location: San Antonio, Texas
-    dates: 2002 — 2002
+    start_date: 2002
+    end_date: 2002
     content:
     - Developed Commercial Host Intrusion Detection System for Windows and Solaris
     - Implemented distribution of Symantec LiveUpdate commands to client machines from system server
@@ -101,7 +118,8 @@ history:
   - title: Senior Development Analyst
     company: E-Spectrum Technologies, Inc.
     location: San Antonio, Texas
-    dates: 2000 — 2002
+    start_date: 2000
+    end_date: 2002
     content:
     - Developed an aircraft availability parts estimation application for an Air Force maintenance contract
     - Designed and developed a web-based system to monitor the status of and store the test results of remote test fixtures
@@ -109,7 +127,8 @@ history:
   - title: IT/Systems Analyst
     company: USAA
     location: San Antonio, Texas
-    dates: 1997 — 2000
+    start_date: 1997
+    end_date: 2000
     content:
     - Served as Team Group Lead for a group of four developers
     - Developed an application used by representatives to suggest additional USAA services to customers
@@ -117,16 +136,18 @@ history:
   - title: Software Engineer
     company: PhotoTelesis, Inc.
     location: San Antonio, Texas
-    dates: 1994 — 1997
+    start_date: 1994
+    end_date: 1997
     content:
     - Ported Windows-based C++ communications software application to SunOs client/server
     - Designed and implemented audio switching and Virtual Keyboard applications for custom portable and pen-based PCs
     - Designed and implemented Law Enforcement Biographical Imagery Database Application
 
   - title: Computer Programmer, Associate
-    company: Lockheed Engineering & Sciences Co. (Lockheed-Martin)
+    company: Lockheed Engineering &amp; Sciences Co. (Lockheed-Martin)
     location: Austin, Texas
-    dates: 1992 — 1994
+    start_date: 1992
+    end_date: 1994
     content:
     - Designed and developed the Combat Service Support Training Simulation System (CSSTSS) as a member of the CSSTSS team
     - Implemented, from Specification, ADA Modules of the Advanced Tomahawk Weapons Control System (ATWCS)
@@ -136,12 +157,12 @@ skills:
   content:
     Languages: Ruby, Python, OCaml, SQL, JavaScript, TypeScript
     Techniques: Unit Testing, TDD/BDD, TOGAF, ArchiMate, RESTful API design
-    Development Tools & Technologies: Ruby on Rails, ReactJS, Node, Git, Atlassian suite, PostgreSQL, MySQL, SQL Server, XML, JSON
+    Development Tools &amp; Technologies: Ruby on Rails, ReactJS, Node, Git, Atlassian suite, PostgreSQL, MySQL, SQL Server, XML, JSON
 
 education:
   title: Education
   degrees:
-  - degree: Bachelor of Science
+  - education_level: Bachelor of Science
     field: Computer Science
     year: 1992
     school: Texas State University
@@ -149,3 +170,6 @@ education:
     department: Computer Science
     url: https://www.txst.edu/
     description: Bachelor of Science in Computer Science
+    credential_category: degree
+    date_created: 1992
+
