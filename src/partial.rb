@@ -2,6 +2,7 @@
 
 require "erb"
 require "meta_tag_list"
+require "json_linking_data"
 
 autoload(:Style, "style.rb")
 autoload(:UnorderedList, "unordered_list.rb")
@@ -30,6 +31,10 @@ class Partial
 
   def unordered_list(ary)
     UnorderedList.new(@data, ary).result
+  end
+
+  def json_ld
+    JsonLinkingData.json_linking_data(@data)
   end
 
   def result

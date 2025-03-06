@@ -7,6 +7,26 @@ meta:
   license: https://creativecommons.org/licenses/by-nd/4.0/
   canonical_link: http://markmorga.com/resume/mark-morga-resume.html
   pdf_link: http://markmorga.com/resume/mark-morga-resume.pdf
+  given_name: Mark
+  family_name: Morga
+  home_page: http://markmorga.com
+  job_title: Principal Software Engineer
+  phone: (830) 515-2286
+  email: markmorga@gmail.com
+  image: https://www.markmorga.com/assets/images/author.jpg
+  birth_date: 
+  gender: Male
+  nationality: USA
+  post_office_box_number: 
+  street_address: 2085 Park Rd
+  address_locality: New Braunfels
+  address_region: Texas
+  postal_code: 78132
+  address_country: US
+  same_as:
+  - https://github.com/mmorga
+  - https://twitter.com/mmorga
+  - https://www.facebook.com/markmorga
 
 title:
   name: Mark Edward Morga
@@ -126,3 +146,6 @@ education:
     year: 1992
     school: Texas State University
     location: San Marcos, Texas
+    department: Computer Science
+    url: https://www.txst.edu/
+    description: Bachelor of Science in Computer Science

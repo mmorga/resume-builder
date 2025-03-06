@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
 
-brew install guard weasyprint pandoc tidy-html5
+brew install guard weasyprint pandoc
 bundle install
+npm install
