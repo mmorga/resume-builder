@@ -108,8 +108,22 @@ module ResumeYaml
     def instance_variables_blank?
       instance_variables.all? do |i|
         val = instance_variable_get(i)
-        val.nil? || val.empty?
+        val.nil? || (val.respond_to?(:empty?) && val.empty?)
       end
+    end
+
+    def json_ld_array(ary)
+      return nil if ary.nil?
+
+      ld_ary = ary.map(&:json_ld).compact
+
+      ld_ary.empty? ? nil : ld_ary
+    end
+
+    def nilable_array(val)
+      return nil if val.nil? || val.empty?
+
+      val
     end
 
     def to_yaml_ast

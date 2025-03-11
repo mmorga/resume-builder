@@ -26,29 +26,16 @@ module ResumeYaml
     yaml_attr(:occupation) { |obj| EmployeeRole.from_hash(obj) }
     yaml_attr(:works_for) { |obj| Organization.from_hash(obj) }
     yaml_attr(:award) { |awards| default_array(awards) }
-    yaml_attr(:alumni_of) { |jobs| default_array(jobs, Job) }
+    yaml_attr(:alumni_of) { |jobs| default_array(jobs, Organization) }
     yaml_attr :skills
+    yaml_attr :same_as
 
     def anchor
-      "##{given_name}"
+      given_name.nil? ? nil : "##{given_name}"
     end
 
     def email_link
       "<a href=\"mailto:#{email}\">#{email}</a>"
-    end
-
-    def json_ld_array(ary)
-      return nil if ary.nil?
-
-      ld_ary = ary.map(&:json_ld).compact
-
-      ld_ary.empty? ? nil : ld_ary
-    end
-
-    def nilable_array(val)
-      return nil if val.nil? || val.empty?
-
-      val
     end
 
     def alumni_of_json_ld
@@ -73,7 +60,9 @@ module ResumeYaml
 
     # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     def json_ld
-      JSON.pretty_generate({
+      return nil if instance_variables_blank?
+
+      {
         "@context" => "http://schema.org/",
         "@type" => "Person",
         "@id" => anchor,
@@ -97,8 +86,9 @@ module ResumeYaml
         "worksFor" => works_for&.json_ld,
         "award" => nilable_array(award),
         "skills" => skills_json_ld,
-        "alumniOf" => alumni_of_json_ld
-      }.compact)
+        "alumniOf" => alumni_of_json_ld,
+        "same_as" => same_as
+      }.compact
     end
     # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
   end

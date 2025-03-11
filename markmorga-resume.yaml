@@ -69,7 +69,7 @@ person:
     Development Tools &amp; Technologies: Ruby on Rails, ReactJS, Node, Git, Atlassian suite, PostgreSQL, MySQL, SQL Server, XML, JSON
   alumni_of:
   - title: Principal Software Engineer
-    company: Sophos
+    name: Sophos
     location: New Braunfels, Texas (Remote)
     start_date: 2019
     end_date: 2025
@@ -84,7 +84,7 @@ person:
       - Attend and contribute to bi-weekly meetings to review proposed OpenAPI definitions for public and private APIs for all of Sophos
 
   - title: Principal Architect
-    company: Rackspace Managed Hosting
+    name: Rackspace Managed Hosting
     location: San Antonio, Texas
     start_date: 2004
     end_date: 2019
@@ -107,7 +107,7 @@ person:
       - Agile Development Methodology and Pair Programming
 
   - title: Senior Software Engineer
-    company: Foundstone, Inc.
+    name: Foundstone, Inc.
     location: San Antonio, Texas
     start_date: 2002
     end_date: 2004
@@ -116,7 +116,7 @@ person:
     - Identified and integrated with cryptographic libraries for Java/C++ to encrypt Windows credentials
 
   - title: Senior Software Engineer
-    company: Symantec, Inc.
+    name: Symantec, Inc.
     location: San Antonio, Texas
     start_date: 2002
     end_date: 2002
@@ -125,7 +125,7 @@ person:
     - Implemented distribution of Symantec LiveUpdate commands to client machines from system server
 
   - title: Senior Development Analyst
-    company: E-Spectrum Technologies, Inc.
+    name: E-Spectrum Technologies, Inc.
     location: San Antonio, Texas
     start_date: 2000
     end_date: 2002
@@ -134,7 +134,7 @@ person:
     - Designed and developed a web-based system to monitor the status of and store the test results of remote test fixtures
 
   - title: IT/Systems Analyst
-    company: USAA
+    name: USAA
     location: San Antonio, Texas
     start_date: 1997
     end_date: 2000
@@ -143,7 +143,7 @@ person:
     - Developed an application used by representatives to suggest additional USAA services to customers
 
   - title: Software Engineer
-    company: PhotoTelesis, Inc.
+    name: PhotoTelesis, Inc.
     location: San Antonio, Texas
     start_date: 1994
     end_date: 1997
@@ -153,7 +153,7 @@ person:
     - Designed and implemented Law Enforcement Biographical Imagery Database Application
 
   - title: Computer Programmer, Associate
-    company: Lockheed Engineering &amp; Sciences Co. (Lockheed-Martin)
+    name: Lockheed Engineering &amp; Sciences Co. (Lockheed-Martin)
     location: Austin, Texas
     start_date: 1992
     end_date: 1994

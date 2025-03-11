@@ -2,6 +2,7 @@
 
 require "delegate"
 require "erb"
+require "json"
 require "meta_tag_list"
 
 autoload(:Style, "style.rb")
@@ -37,7 +38,7 @@ class Partial < SimpleDelegator
   end
 
   def json_ld
-    @data.person.json_ld
+    JSON.pretty_generate(@data.person.json_ld)
   end
 
   def result
