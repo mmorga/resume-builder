@@ -4,9 +4,9 @@ module ResumeYaml
   class History
     include YamlMapping
 
-    attr_reader :title, :jobs
+    attr_reader :title
 
-    output_yaml_order :title, :jobs
+    output_yaml_order :title
 
     def title=(str)
       @title = default_string(str, "Experience")

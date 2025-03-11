@@ -4,12 +4,16 @@ module ResumeYaml
   class Resume
     include YamlMapping
 
-    attr_reader :meta, :title, :summary, :history, :skills, :education
+    attr_reader :meta, :person, :title, :summary, :history, :skills, :education
 
-    output_yaml_order :meta, :title, :summary, :history, :skills, :education
+    output_yaml_order :meta, :person, :title, :summary, :history, :skills, :education
 
     def meta=(hash)
       @meta = Meta.from_hash(hash)
+    end
+
+    def person=(hash)
+      @person = Person.from_hash(hash)
     end
 
     def title=(hash)

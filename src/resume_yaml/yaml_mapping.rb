@@ -79,6 +79,19 @@ module ResumeYaml
       order
     end
 
+    def instance_variables_nil?
+      instance_variables.all? do |i|
+        instance_variable_get(i).nil?
+      end
+    end
+
+    def instance_variables_blank?
+      instance_variables.all? do |i|
+        val = instance_variable_get(i)
+        val.nil? || val.empty?
+      end
+    end
+
     def to_yaml_ast
       mapping = Psych::Nodes::Mapping.new
       yaml_order.each do |sym|

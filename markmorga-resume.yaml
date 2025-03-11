@@ -1,28 +1,32 @@
 ---
 meta:
-  description: Mark Morga is an experienced software engineer
   keywords: morga,mark,resume,cv,experience,skills,
   author: Mark Edward Morga
   copyright: Mark Edward Morga, 2025, All Rights Reserved.
   license: https://creativecommons.org/licenses/by-nd/4.0/
   canonical_link: http://markmorga.com/resume/mark-morga-resume.html
   pdf_link: http://markmorga.com/resume/mark-morga-resume.pdf
+  
+person:
   given_name: Mark
   family_name: Morga
-  home_page: http://markmorga.com
+  name: Mark Edward Morga
   job_title: Principal Software Engineer
+  description: Mark Morga is an experienced software engineer
   phone: (830) 515-2286
   email: markmorga@gmail.com
+  home_page: http://markmorga.com
   image: https://www.markmorga.com/assets/images/author.jpg
   birth_date: 
   gender: Male
   nationality: USA
-  post_office_box_number: 
-  street_address: 2085 Park Rd
-  address_locality: New Braunfels
-  address_region: Texas
-  postal_code: 78132
-  address_country: US
+  address:
+    post_office_box_number: 
+    street_address: 2085 Park Rd
+    address_locality: New Braunfels
+    address_region: Texas
+    postal_code: 78132
+    address_country: US
   contact_points:
   - contact_type: GitHub
     identifier: https://github.com/mmorga
@@ -36,29 +40,27 @@ meta:
     identifier: https://www.facebook.com/markmorga
     image:
     url: https://www.facebook.com/markmorga
+  credentials:
+  - education_level: Bachelor of Science
+    field: Computer Science
+    year: 1992
+    school: Texas State University
+    location: San Marcos, Texas
+    department: Computer Science
+    url: https://www.txst.edu/
+    description: Bachelor of Science in Computer Science
+    credential_category: degree
+    date_created: 1992
   occupation:
     role_name:
     start_date:
   works_for:
-  
-title:
-  name: Mark Edward Morga
-  address:
-  - New Braunfels, Texas
-  - (830) 515-2286
-  - markmorga@gmail.com
-
-summary:
-  title: Professional Summary
-  content:
-  - Software Engineer and Principal Architect with more than 25 years of experience building solutions across a variety of domains.
-  - Strong team leadership, communication and mentoring skills.
-  - Evolves development processes to suit the business needs and to improve the team's productivity and quality.
-  - Track record of collaborating with customers to produce superior solutions focused on applicability and usability.
-
-history:
-  title: Experience
-  jobs:
+  award:
+  skills:
+    Languages: Ruby, Python, OCaml, SQL, JavaScript, TypeScript
+    Techniques: Unit Testing, TDD/BDD, TOGAF, ArchiMate, RESTful API design
+    Development Tools &amp; Technologies: Ruby on Rails, ReactJS, Node, Git, Atlassian suite, PostgreSQL, MySQL, SQL Server, XML, JSON
+  alumni_of:
   - title: Principal Software Engineer
     company: Sophos
     location: New Braunfels, Texas (Remote)
@@ -152,24 +154,26 @@ history:
     - Designed and developed the Combat Service Support Training Simulation System (CSSTSS) as a member of the CSSTSS team
     - Implemented, from Specification, ADA Modules of the Advanced Tomahawk Weapons Control System (ATWCS)
 
+title:
+  name: Mark Edward Morga
+  address:
+  - New Braunfels, Texas
+  - (830) 515-2286
+  - markmorga@gmail.com
+
+summary:
+  title: Professional Summary
+  content:
+  - Software Engineer and Principal Architect with more than 25 years of experience building solutions across a variety of domains.
+  - Strong team leadership, communication and mentoring skills.
+  - Evolves development processes to suit the business needs and to improve the team's productivity and quality.
+  - Track record of collaborating with customers to produce superior solutions focused on applicability and usability.
+
+history:
+  title: Experience
+
 skills:
   title: Skills
-  content:
-    Languages: Ruby, Python, OCaml, SQL, JavaScript, TypeScript
-    Techniques: Unit Testing, TDD/BDD, TOGAF, ArchiMate, RESTful API design
-    Development Tools &amp; Technologies: Ruby on Rails, ReactJS, Node, Git, Atlassian suite, PostgreSQL, MySQL, SQL Server, XML, JSON
 
 education:
   title: Education
-  degrees:
-  - education_level: Bachelor of Science
-    field: Computer Science
-    year: 1992
-    school: Texas State University
-    location: San Marcos, Texas
-    department: Computer Science
-    url: https://www.txst.edu/
-    description: Bachelor of Science in Computer Science
-    credential_category: degree
-    date_created: 1992
-

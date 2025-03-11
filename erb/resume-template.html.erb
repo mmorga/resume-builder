@@ -30,7 +30,7 @@
         <header>
           <h2><%= history.title %></h2>
         </header>
-        <% history.jobs.each do |job| %>
+        <% person.alumni_of.each do |job| %>
         <section class="job">
           <h3><%= job.title %></h3>
           <h4>
@@ -47,22 +47,22 @@
         <header>
           <h2><%= skills.title %></h2>
         </header>
-        <% if skills.content.is_a?(Hash) %>
+        <% if person.skills.is_a?(Hash) %>
         <dl>
-        <% skills.content.each_pair do |k, v| %>
+        <% person.skills.each_pair do |k, v| %>
           <dt><%= k %></dt>
           <dd><%= v %></dd>
         <% end %>
         </dl>
         <% else %>
-          <%= unordered_list(skills.content) %>
+          <%= unordered_list(person.skills) %>
         <% end %>
       </article>
       <article class="education">
         <header>
           <h2><%= education.title %></h2>
         </header>
-        <% education.degrees.each do |d| %>
+        <% person.credentials.each do |d| %>
         <section>
           <b><%= d.education_level %> in <%= d.field %></b>
           <br/>

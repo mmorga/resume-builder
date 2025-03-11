@@ -12,5 +12,23 @@ module ResumeYaml
     def content=(con)
       @content = default_array(con)
     end
+
+    def json_ld(employee_same_as = nil)
+      {
+        "@type" => "Organization",
+        "name" => company,
+        "sameAs" => url,
+        "employee" => {
+          "@type" => "Person",
+          "hasOccupation" => {
+            "@type" => "EmployeeRole",
+            "roleName" => title,
+            "startDate" => start_date,
+            "endDate" => end_date
+          }.compact,
+          "sameAs" => employee_same_as
+        }.compact
+      }.compact
+    end
   end
 end
