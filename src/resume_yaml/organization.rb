@@ -4,9 +4,8 @@ module ResumeYaml
   class Organization
     include YamlMapping
 
-    attr_accessor :name, :same_as
-
-    output_yaml_order :name, :same_as
+    yaml_attr :name
+    yaml_attr :same_as
 
     def json_ld
       return nil if instance_variables_nil?

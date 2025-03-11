@@ -4,8 +4,12 @@ module ResumeYaml
   class Twitter
     include YamlMapping
 
-    attr_accessor :card, :site, :creator, :domain, :description, :title, :image
-
-    output_yaml_order :card, :site, :creator, :domain, :description, :title, :image
+    yaml_attr :card
+    yaml_attr :site
+    yaml_attr :creator
+    yaml_attr :domain
+    yaml_attr :description
+    yaml_attr :title
+    yaml_attr :image
   end
 end

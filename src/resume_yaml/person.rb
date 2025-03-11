@@ -6,45 +6,35 @@ module ResumeYaml
   class Person
     include YamlMapping
 
-    attr_accessor :description, :name, :given_name, :family_name, :home_page, :job_title,
-                  :phone, :email, :image, :birth_date, :gender, :nationality, :skills
-    attr_reader :address, :contact_points, :credentials, :occupation, :works_for, :award, :alumni_of
-
-    output_yaml_order :name, :given_name, :family_name, :description,
-                      :home_page, :job_title, :phone, :email, :image, :birth_date, :gender,
-                      :nationality, :address, :contact_points, :credentials, :occupation, :works_for,
-                      :award, :alumni_of, :skills
-
-    def address=(obj)
-      @address = PostalAddress.from_hash(obj)
-    end
-
-    def occupation=(obj)
-      @occupation = EmployeeRole.from_hash(obj)
-    end
-
-    def works_for=(obj)
-      @works_for = Organization.from_hash(obj)
-    end
-
-    def contact_points=(contact_points)
-      @contact_points = default_array(contact_points).map { |cp| ContactPoint.from_hash(cp) }
-    end
-
-    def credentials=(credentials)
-      @credentials = default_array(credentials).map { |cp| Degree.from_hash(cp) }
-    end
-
-    def alumni_of=(jobs)
-      @alumni_of = default_array(jobs).map { |job| Job.from_hash(job) }
-    end
-
-    def award=(awards)
-      @award = default_array(awards)
-    end
+    yaml_attr :given_name
+    yaml_attr :name
+    yaml_attr :family_name
+    yaml_attr :additional_name
+    yaml_attr :description
+    yaml_attr :home_page
+    yaml_attr :job_title
+    yaml_attr(:seeks) { |obj| Demand.from_hash(obj) }
+    yaml_attr :phone
+    yaml_attr :email
+    yaml_attr :image
+    yaml_attr :birth_date
+    yaml_attr :gender
+    yaml_attr :nationality
+    yaml_attr(:address) { |obj| PostalAddress.from_hash(obj) }
+    yaml_attr(:contact_points) { |cps| default_array(cps, ContactPoint) }
+    yaml_attr(:credentials) { |credentials| default_array(credentials, Degree) }
+    yaml_attr(:occupation) { |obj| EmployeeRole.from_hash(obj) }
+    yaml_attr(:works_for) { |obj| Organization.from_hash(obj) }
+    yaml_attr(:award) { |awards| default_array(awards) }
+    yaml_attr(:alumni_of) { |jobs| default_array(jobs, Job) }
+    yaml_attr :skills
 
     def anchor
       "##{given_name}"
+    end
+
+    def email_link
+      "<a href=\"mailto:#{email}\">#{email}</a>"
     end
 
     def json_ld_array(ary)
@@ -70,7 +60,7 @@ module ResumeYaml
     def skills_json_ld
       return nil if skills.nil? || skills.empty?
 
-      return skills if skills.is_a?(Array)
+      return skills.join(",") if skills.is_a?(Array)
 
       skills.map do |k, v|
         {
@@ -81,6 +71,7 @@ module ResumeYaml
       end
     end
 
+    # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     def json_ld
       JSON.pretty_generate({
         "@context" => "http://schema.org/",
@@ -89,6 +80,7 @@ module ResumeYaml
         "name" => name,
         "givenName" => given_name,
         "familyName" => family_name,
+        "additionalName" => additional_name,
         "jobTitle" => job_title,
         "description" => description,
         "telephone" => phone,
@@ -108,5 +100,6 @@ module ResumeYaml
         "alumniOf" => alumni_of_json_ld
       }.compact)
     end
+    # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
   end
 end

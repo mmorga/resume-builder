@@ -4,12 +4,13 @@ module ResumeYaml
   class ContactPoint
     include YamlMapping
 
-    attr_accessor :contact_type, :identifier, :image, :url
-
-    output_yaml_order :contact_type, :identifier, :image, :url
+    yaml_attr :contact_type
+    yaml_attr :identifier
+    yaml_attr :image
+    yaml_attr :url
 
     def json_ld
-      return nil if [contact_type, identifier, image, url].all?(&:nil?)
+      return nil if instance_variables_nil?
 
       {
         "@type" => "ContactPoint",

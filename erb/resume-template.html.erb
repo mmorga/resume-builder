@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><%= title.name %></title>
+    <title><%= person.name %></title>
     <style>
       <%= style %>
     </style>
@@ -15,20 +15,20 @@
   <body>
     <main class="h-resume">
       <header class="title">
-        <h1 class="p-name"><%= title.name %></h1>
+        <h1 class="p-name"><%= person.name %></h1>
         <address>
-          <%= title.address.map {|i| link_emails(i) }.join("&nbsp;&#124;&nbsp;") %>
+          <%= [person.address.locality_region, person.phone, person.email_link].join("&nbsp;&#124;&nbsp;") %>
         </address>
       </header>
       <article class="summary p-summary">
         <header>
-          <h2><%= summary.title %></h2>
+          <h2>Professional Summary</h2>
         </header>
-        <p><%= summary.content.join(" ") %></p>
+        <p><%= person.seeks.description %></p>
       </article>
       <article class="history">
         <header>
-          <h2><%= history.title %></h2>
+          <h2>Experience</h2>
         </header>
         <% person.alumni_of.each do |job| %>
         <section class="job">
@@ -45,7 +45,7 @@
       </article>
       <article class="skills">
         <header>
-          <h2><%= skills.title %></h2>
+          <h2>Skills</h2>
         </header>
         <% if person.skills.is_a?(Hash) %>
         <dl>
@@ -60,7 +60,7 @@
       </article>
       <article class="education">
         <header>
-          <h2><%= education.title %></h2>
+          <h2>Education</h2>
         </header>
         <% person.credentials.each do |d| %>
         <section>

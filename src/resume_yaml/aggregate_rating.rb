@@ -4,12 +4,11 @@ module ResumeYaml
   class AggregateRating
     include YamlMapping
 
-    attr_accessor :rating_value, :name
-
-    output_yaml_order :rating_value, :name
+    yaml_attr :rating_value
+    yaml_attr :name
 
     def json_ld
-      return nil if [rating_value, name].all?(&:nil?)
+      return nil if instance_variables_nil?
 
       {
         "@type" => "AggregateRating",

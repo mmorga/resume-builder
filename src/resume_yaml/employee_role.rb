@@ -4,17 +4,18 @@ module ResumeYaml
   class EmployeeRole
     include YamlMapping
 
-    attr_accessor :role_name, :start_date
-
-    output_yaml_order :role_name, :start_date
+    yaml_attr :role_name
+    yaml_attr :start_date
+    yaml_attr :end_date
 
     def json_ld
       return nil if instance_variables_nil?
 
       {
         "@type" => "EmployeeRole",
-        "roleName" => occupation.role_name,
-        "startDate" => occupation.start_date
+        "roleName" => role_name,
+        "startDate" => start_date,
+        "endDate" => end_date
       }.compact
     end
   end

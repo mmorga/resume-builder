@@ -4,15 +4,19 @@ module ResumeYaml
   class PostalAddress
     include YamlMapping
 
-    attr_accessor :post_office_box_number, :street_address, :address_locality,
-                  :address_region, :postal_code, :address_country
+    yaml_attr :post_office_box_number
+    yaml_attr :street_address
+    yaml_attr :address_locality
+    yaml_attr :address_region
+    yaml_attr :postal_code
+    yaml_attr :address_country
 
-    output_yaml_order :post_office_box_number, :street_address, :address_locality,
-                      :address_region, :postal_code, :address_country
+    def locality_region
+      [address_locality, address_region].join(", ")
+    end
 
     def json_ld
-      return nil if [post_office_box_number, street_address, address_locality, address_region, postal_code,
-                     address_country].all?(&:nil?)
+      return nil if instance_variables_nil?
 
       {
         "@type" => "PostalAddress",

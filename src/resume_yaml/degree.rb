@@ -4,16 +4,17 @@ module ResumeYaml
   class Degree
     include YamlMapping
 
-    attr_accessor :education_level, :field, :year, :school, :location, :department, :url,
-                  :description, :credential_category, :date_created
-    attr_reader :aggregate_rating
-
-    output_yaml_order :education_level, :field, :year, :school, :location, :department, :url,
-                      :description, :aggregate_rating, :credential_category, :date_created
-
-    def aggregate_rating=(obj)
-      @aggregate_rating = AggregateRating.from_hash(obj)
-    end
+    yaml_attr :education_level
+    yaml_attr :field
+    yaml_attr :year
+    yaml_attr :school
+    yaml_attr :location
+    yaml_attr :department
+    yaml_attr :url
+    yaml_attr :description
+    yaml_attr(:aggregate_rating) { |obj| AggregateRating.from_hash(obj) }
+    yaml_attr :credential_category
+    yaml_attr :date_created
 
     def json_ld
       return nil if instance_variables_nil?

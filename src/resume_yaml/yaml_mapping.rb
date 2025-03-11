@@ -11,20 +11,49 @@ module ResumeYaml
           .select { |sym| sym.to_s.end_with?("=") }
           .each { |sym| db.send(sym, hash[sym.to_s[..-2]]) }
 
-        ext = hash.keys - db.instance_variables.map { |i| i.to_s[1..] }
-        warn "#{db.class.name} YAML instance had unexpected keys: #{ext}" unless ext.empty?
+        warn_of_invalid_hash_keys(hash, db)
 
         db
       end
 
-      def output_yaml_order(*attrs)
-        @yaml_order = attrs
+      def warn_of_invalid_hash_keys(hash, inst)
+        ext = hash.keys - inst.instance_variables.map { |i| i.to_s[1..] }
+        warn "#{inst.class.name} YAML instance had unexpected keys: #{ext}" unless ext.empty?
+      end
+
+      def yaml_attr(sym, &block)
+        @yaml_order ||= []
+        @yaml_order.push(sym)
+
+        class_eval { attr_reader sym }
+        if block_given?
+          define_method("#{sym}=") do |arg|
+            instance_variable_set(:"@#{sym}", block.call(arg))
+          end
+        else
+          class_eval { attr_writer sym }
+        end
       end
 
       def yaml_order
         return @yaml_order if instance_variable_defined?(:@yaml_order)
 
         []
+      end
+
+      def default_array(ary, cls = nil)
+        array = blank?(ary) ? [] : Array(ary)
+        return array unless cls
+
+        array.map { |cp| cls.from_hash(cp) }
+      end
+
+      def blank?(str)
+        str.nil? || str.empty?
+      end
+
+      def default_string(str, default)
+        blank?(str) ? default : str
       end
     end
 
@@ -69,20 +98,11 @@ module ResumeYaml
     # rubocop:enable Metrics/MethodLength
 
     def yaml_order
-      order = self.class.yaml_order
-      missing_syms = instance_variables.map { |s| s.to_s[1..].to_sym }.sort - order
-      unless missing_syms.empty?
-        order |= missing_syms
-        warn "#{self.class.name} output_yaml_order is missing: #{missing_syms.inspect}, using order: #{order}"
-      end
-
-      order
+      self.class.yaml_order
     end
 
     def instance_variables_nil?
-      instance_variables.all? do |i|
-        instance_variable_get(i).nil?
-      end
+      instance_variables.all? { |i| instance_variable_get(i).nil? }
     end
 
     def instance_variables_blank?
@@ -99,24 +119,6 @@ module ResumeYaml
         mapping.children << yaml_ast_of(send(sym))
       end
       mapping
-    end
-
-    def blank?(str)
-      str.nil? || str.empty?
-    end
-
-    def default_array(ary)
-      blank?(ary) ? [] : Array(ary)
-    end
-
-    def default_hash_or_array(hoa)
-      return {} if blank?(hoa)
-
-      hoa
-    end
-
-    def default_string(str, default)
-      blank?(str) ? default : str
     end
   end
 end

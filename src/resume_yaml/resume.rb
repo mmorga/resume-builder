@@ -4,37 +4,8 @@ module ResumeYaml
   class Resume
     include YamlMapping
 
-    attr_reader :meta, :person, :title, :summary, :history, :skills, :education
-
-    output_yaml_order :meta, :person, :title, :summary, :history, :skills, :education
-
-    def meta=(hash)
-      @meta = Meta.from_hash(hash)
-    end
-
-    def person=(hash)
-      @person = Person.from_hash(hash)
-    end
-
-    def title=(hash)
-      @title = Title.from_hash(hash)
-    end
-
-    def summary=(hash)
-      @summary = Summary.from_hash(hash)
-    end
-
-    def history=(hash)
-      @history = History.from_hash(hash)
-    end
-
-    def skills=(hash)
-      @skills = Skills.from_hash(hash)
-    end
-
-    def education=(hash)
-      @education = Education.from_hash(hash)
-    end
+    yaml_attr(:meta) { |hash| Meta.from_hash(hash) }
+    yaml_attr(:person) { |hash| Person.from_hash(hash) }
 
     def to_yaml
       stream = Psych::Nodes::Stream.new

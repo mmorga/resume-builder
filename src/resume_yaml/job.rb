@@ -4,14 +4,13 @@ module ResumeYaml
   class Job
     include YamlMapping
 
-    attr_accessor :title, :company, :location, :url, :start_date, :end_date
-    attr_reader :content
-
-    output_yaml_order :title, :company, :url, :location, :start_date, :end_date, :content
-
-    def content=(con)
-      @content = default_array(con)
-    end
+    yaml_attr :title
+    yaml_attr :company
+    yaml_attr :url
+    yaml_attr :location
+    yaml_attr :start_date
+    yaml_attr :end_date
+    yaml_attr(:content) { |con| default_array(con) }
 
     def json_ld(employee_same_as = nil)
       {

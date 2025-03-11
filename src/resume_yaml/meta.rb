@@ -4,15 +4,13 @@ module ResumeYaml
   class Meta
     include YamlMapping
 
-    attr_accessor :keywords, :author, :copyright, :license,
-                  :canonical_link, :pdf_link, :created
-    attr_reader :twitter
-
-    output_yaml_order :created, :keywords, :author, :copyright, :license,
-                      :canonical_link, :pdf_link, :twitter
-
-    def twitter=(obj)
-      @twitter = Twitter.from_hash(obj)
-    end
+    yaml_attr :created
+    yaml_attr :keywords
+    yaml_attr :author
+    yaml_attr :copyright
+    yaml_attr :license
+    yaml_attr :canonical_link
+    yaml_attr :pdf_link
+    yaml_attr(:twitter) { |obj| Twitter.from_hash(obj) }
   end
 end
