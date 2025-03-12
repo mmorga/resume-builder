@@ -1,8 +1,16 @@
 # frozen_string_literal: true
 
+require "delegate"
 require "erb"
+require "json"
+require "meta_tag_list"
 
-class Partial
+autoload(:Style, "style.rb")
+autoload(:UnorderedList, "unordered_list.rb")
+
+class Partial < SimpleDelegator
+  include MetaTagList
+
   EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   attr_reader :data
@@ -10,6 +18,7 @@ class Partial
   def initialize(template_file, data)
     @erb_template = File.read(template_file)
     @data = data
+    super(data)
   end
 
   def link_emails(str)
@@ -28,6 +37,10 @@ class Partial
     UnorderedList.new(@data, ary).result
   end
 
+  def json_ld
+    JSON.pretty_generate(@data.person.to_json_ld)
+  end
+
   def result
     template = ERB.new(@erb_template, trim_mode: '%<>')
     template.result(binding)
@@ -35,17 +48,5 @@ class Partial
 
   def metadata
     meta_tag_list(@data)
-  end
-
-  def method_missing(symbol, ...)
-    if data.members.include?(symbol)
-      @data.send(symbol, ...)
-    else
-      super
-    end
-  end
-
-  def respond_to_missing?(method_name, include_private = false)
-    @data.respond_to?(method_name) || super
   end
 end
