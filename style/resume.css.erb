@@ -1,7 +1,7 @@
 body {
   background: #fff;
   color: #000;
-  font-family: "Calibri";
+  font-family: Calibri, -apple-system, ".SFNSText-Regular", "Helvetica Neue", sans-serif;
   font-size: 12pt;
 }
 
@@ -43,6 +43,7 @@ article.history {
 
 article > header {
   border-bottom: 1px solid #112481;
+  margin-bottom: 1rem;
 }
 
 section {
@@ -56,6 +57,10 @@ address {
   font-style: normal;
   margin-left: 3em;
   margin-bottom: 0.25em;
+}
+
+p {
+  margin: 0 0 1rem 0;
 }
 
 ul {
@@ -105,13 +110,13 @@ a:active {
 
   @page :right {
     @bottom-right {
-      content: "<%= title.name %>, " counter(page)
+      content: "<%= person.name %>, " counter(page)
     }
   }
 
   @page :left {
     @bottom-left {
-      content: "<%= title.name %>, " counter(page)
+      content: "<%= person.name %>, " counter(page)
     }
   }
   @page :first {

@@ -1,44 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en-US">
   <head>
-    <meta charset= "utf-8">
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width, minimum-scale=1" />
-    <meta name="generator" content="Mark Morga's Resume Generator">
-
-    <%= metadata %>
-    <title><%= title.name %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= person.name %></title>
     <style>
       <%= style %>
     </style>
+    <%= metadata %>
+    <script type="application/ld+json">
+      <%= json_ld %>
+    </script>
   </head>
   <body>
     <main class="h-resume">
       <header class="title">
-        <h1 class="p-name"><%= title.name %></h1>
+        <h1 class="p-name"><%= person.name %></h1>
         <address>
-          <%= title.address.map {|i| link_emails(i) }.join("&nbsp;&#124;&nbsp;") %>
+          <%= [person.address.locality_region, person.phone, person.email_link].join("&nbsp;&#124;&nbsp;") %>
         </address>
       </header>
       <article class="summary p-summary">
         <header>
-          <h2><%= summary.title %></h2>
+          <h2>Professional Summary</h2>
         </header>
-        <p><%= summary.content.join(" ") %></p>
+        <p><%= person.seeks.description %></p>
       </article>
       <article class="history">
         <header>
-          <h2><%= history.title %></h2>
+          <h2>Experience</h2>
         </header>
-        <% history.jobs.each do |job| %>
+        <% person.alumni_of.each do |job| %>
         <section class="job">
           <h3><%= job.title %></h3>
           <h4>
-            <% if job.company %>
-            <span class="company"><%= job.company %></span>
+            <% if job.name %>
+            <span class="company"><%= job.name %></span>
             &nbsp;&#124;&nbsp;
             <% end %>
             <span class="location"><%= job.location %></span>
-            <span class="dates"><%= job.dates %></span>
+            <span class="dates"><%= [job.start_date, job.end_date].join("&nbsp;&ndash;&nbsp;") %></span>
           </h4>
           <%= unordered_list(job.content) %>
         </section>
@@ -46,26 +47,26 @@
       </article>
       <article class="skills">
         <header>
-          <h2><%= skills.title %></h2>
+          <h2>Skills</h2>
         </header>
+        <% if person.skills.is_a?(Hash) %>
         <dl>
-        <% if skills.content.is_a?(Hash) %>
-        <% skills.content.each_pair do |k, v| %>
+        <% person.skills.each_pair do |k, v| %>
           <dt><%= k %></dt>
           <dd><%= v %></dd>
         <% end %>
-        <% else %>
-          <%= unordered_list(skills.content) %>
-        <% end %>
         </dl>
+        <% else %>
+          <%= unordered_list(person.skills) %>
+        <% end %>
       </article>
       <article class="education">
         <header>
-          <h2><%= education.title %></h2>
+          <h2>Education</h2>
         </header>
-        <% education.degrees.each do |d| %>
+        <% person.credentials.each do |d| %>
         <section>
-          <b><%= d.degree %> in <%= d.field %></b>
+          <b><%= d.education_level %> in <%= d.field %></b>
           <br/>
           <%= d.school %>, <%= d.location %>
         </section>
