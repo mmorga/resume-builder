@@ -43,7 +43,7 @@ class Partial < SimpleDelegator
 
   def result
     template = ERB.new(@erb_template, trim_mode: '%<>')
-    template.result(binding)
+    template.result(::Kernel.binding)
   end
 
   def metadata
