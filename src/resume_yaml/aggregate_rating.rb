@@ -7,8 +7,8 @@ module ResumeYaml
     yaml_attr :rating_value
     yaml_attr :name
 
-    def json_ld
-      return nil if instance_variables_nil?
+    def to_json_ld
+      return nil if instance_variables_blank?
 
       {
         "@type" => "AggregateRating",

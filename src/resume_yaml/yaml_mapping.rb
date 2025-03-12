@@ -51,58 +51,14 @@ module ResumeYaml
       def blank?(str)
         str.nil? || str.empty?
       end
-
-      def default_string(str, default)
-        blank?(str) ? default : str
-      end
     end
 
     def self.included(base)
       base.extend(ClassMethods)
     end
 
-    def yaml_ast_of_array(obj)
-      seq = Psych::Nodes::Sequence.new
-      obj.each do |o|
-        seq.children << yaml_ast_of(o)
-      end
-      seq
-    end
-
-    def yaml_ast_of_hash(obj)
-      mapping = Psych::Nodes::Mapping.new
-      obj.each do |k, v|
-        mapping.children << yaml_ast_of(k)
-        mapping.children << yaml_ast_of(v)
-      end
-      mapping
-    end
-
-    # rubocop:disable Metrics/MethodLength
-    def yaml_ast_of(obj)
-      case obj
-      when Integer
-        Psych::Nodes::Scalar.new(obj.to_s)
-      when String, NilClass
-        Psych::Nodes::Scalar.new(obj || "")
-      when YamlMapping
-        obj.to_yaml_ast
-      when Array
-        yaml_ast_of_array(obj)
-      when Hash
-        yaml_ast_of_hash(obj)
-      else
-        raise "Need to handle #{obj.class}\n#{obj.inspect}\n"
-      end
-    end
-    # rubocop:enable Metrics/MethodLength
-
     def yaml_order
       self.class.yaml_order
-    end
-
-    def instance_variables_nil?
-      instance_variables.all? { |i| instance_variable_get(i).nil? }
     end
 
     def instance_variables_blank?
@@ -112,25 +68,11 @@ module ResumeYaml
       end
     end
 
-    def json_ld_array(ary)
-      return nil if ary.nil?
-
-      ld_ary = ary.map(&:json_ld).compact
-
-      ld_ary.empty? ? nil : ld_ary
-    end
-
-    def nilable_array(val)
-      return nil if val.nil? || val.empty?
-
-      val
-    end
-
     def to_yaml_ast
       mapping = Psych::Nodes::Mapping.new
       yaml_order.each do |sym|
         mapping.children << Psych::Nodes::Scalar.new(sym.to_s)
-        mapping.children << yaml_ast_of(send(sym))
+        mapping.children << send(sym).to_yaml_ast
       end
       mapping
     end

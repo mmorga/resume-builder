@@ -38,12 +38,6 @@ module ResumeYaml
       "<a href=\"mailto:#{email}\">#{email}</a>"
     end
 
-    def alumni_of_json_ld
-      return nil if alumni_of.nil? || alumni_of.empty?
-
-      alumni_of.map { |j| j.json_ld(anchor) }.compact
-    end
-
     def skills_json_ld
       return nil if skills.nil? || skills.empty?
 
@@ -59,7 +53,7 @@ module ResumeYaml
     end
 
     # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-    def json_ld
+    def to_json_ld
       return nil if instance_variables_blank?
 
       {
@@ -79,16 +73,16 @@ module ResumeYaml
         "birthDate" => birth_date,
         "gender" => gender,
         "nationality" => nationality,
-        "address" => address&.json_ld,
-        "contactPoint" => json_ld_array(contact_points),
-        "hasCredential" => json_ld_array(credentials),
-        "hasOccupation" => occupation&.json_ld,
-        "worksFor" => works_for&.json_ld,
-        "award" => nilable_array(award),
+        "address" => address,
+        "contactPoint" => contact_points,
+        "hasCredential" => credentials,
+        "hasOccupation" => occupation,
+        "worksFor" => works_for,
+        "award" => award,
         "skills" => skills_json_ld,
-        "alumniOf" => alumni_of_json_ld,
+        "alumniOf" => alumni_of,
         "same_as" => same_as
-      }.compact
+      }.transform_values(&:to_json_ld).compact
     end
     # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
   end

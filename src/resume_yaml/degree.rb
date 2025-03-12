@@ -16,12 +16,12 @@ module ResumeYaml
     yaml_attr :credential_category
     yaml_attr :date_created
 
-    def json_ld
-      return nil if instance_variables_nil?
+    def to_json_ld
+      return nil if instance_variables_blank?
 
       {
         "@type" => "EducationalOccupationalCredential",
-        "aggregateRating" => aggregate_rating&.json_ld,
+        "aggregateRating" => aggregate_rating&.to_json_ld,
         "credentialCategory" => credential_category,
         "educationalLevel" => education_level,
         "dateCreated" => date_created,

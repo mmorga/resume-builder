@@ -10,8 +10,8 @@ module ResumeYaml
     yaml_attr :available_at_or_from
     yaml_attr :delivery_lead_time
 
-    def json_ld
-      return nil if instance_variables_nil?
+    def to_json_ld
+      return nil if instance_variables_blank?
 
       {
         '@type': "Demand",

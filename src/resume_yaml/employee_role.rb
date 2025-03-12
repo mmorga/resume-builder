@@ -8,8 +8,8 @@ module ResumeYaml
     yaml_attr :start_date
     yaml_attr :end_date
 
-    def json_ld
-      return nil if instance_variables_nil?
+    def to_json_ld
+      return nil if instance_variables_blank?
 
       {
         "@type" => "EmployeeRole",

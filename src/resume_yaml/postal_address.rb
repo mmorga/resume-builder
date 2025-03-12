@@ -15,8 +15,8 @@ module ResumeYaml
       [address_locality, address_region].join(", ")
     end
 
-    def json_ld
-      return nil if instance_variables_nil?
+    def to_json_ld
+      return nil if instance_variables_blank?
 
       {
         "@type" => "PostalAddress",

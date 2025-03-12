@@ -12,7 +12,7 @@ module ResumeYaml
     yaml_attr(:content) { |con| default_array(con) }
     yaml_attr :same_as
 
-    def json_ld(employee_same_as = nil)
+    def to_json_ld(employee_same_as = nil)
       return nil if instance_variables_blank?
 
       {
@@ -22,7 +22,7 @@ module ResumeYaml
         "employee" => Person.from_hash(
           "occupation" => { "role_name" => title, "start_date" => start_date, "end_date" => end_date },
           "same_as" => employee_same_as
-        ).json_ld
+        ).to_json_ld
       }.compact
     end
   end

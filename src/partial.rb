@@ -38,7 +38,7 @@ class Partial < SimpleDelegator
   end
 
   def json_ld
-    JSON.pretty_generate(@data.person.json_ld)
+    JSON.pretty_generate(@data.person.to_json_ld)
   end
 
   def result

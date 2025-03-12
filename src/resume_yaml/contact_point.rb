@@ -9,8 +9,8 @@ module ResumeYaml
     yaml_attr :image
     yaml_attr :url
 
-    def json_ld
-      return nil if instance_variables_nil?
+    def to_json_ld
+      return nil if instance_variables_blank?
 
       {
         "@type" => "ContactPoint",
