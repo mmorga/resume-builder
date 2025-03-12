@@ -1,0 +1,92 @@
+---
+meta:
+  description: Accomplished Manager with a proven track record
+  keywords: Mosier, Jayson Mosier, resume, cv, manager, sales, customer service
+  author: Jayson Mosier
+  copyright: Jayson Mosier, 2025, All Rights Reserved.
+  license: https://creativecommons.org/licenses/by-nd/4.0/
+
+title:
+  name: Jayson Mosier
+  address:
+  - jaysonmosier@gmail.com
+  - 210-238-6441
+  - San Antonio, TX 78217
+
+summary:
+  title: Summary
+  content:
+  - Accomplished Manager with a proven track record at Crossroad Bicycles.
+  - Expert in sales management and decision-making.
+  - Excels in conflict resolution and fostering customer relationships.
+  - Demonstrated ability to improve team performance and streamline processes for efficiency.
+
+history:
+  title: Experience
+  jobs:
+  - title: Manager
+    company: Crossroad Bicycles
+    location: San Antonio, TX
+    dates: 11/2022 - Present
+    content:
+    - Currently managing day-to-day operations of Crossroad Bikes and achieving over $1.3M in sales.
+    - Streamlined inventory management to meet demand accurately.
+    - Cultivated and preserved long-standing customer connections.
+    - Managed work delegation to staff, setting team member priorities and goals.
+    - Provided motivational coaching and training to enhance team member performance.
+    - Enforced customer service standards and resolved customer issues to uphold service quality.
+
+  - title: Sales and Repair Technician
+    company: Ride A Way Bicycle
+    location: San Antonio, Texas
+    dates: 01/2021 - 11/2022
+    content:
+    - Analyzed complex problems related to products and provided solutions in a timely manner.
+    - Provided technical support and advice to customers regarding their repair needs.
+    - Provided customers with comprehensive assistance upon entering store, including product advice and sales.
+    - Sold high-ticket value items, exceeding $6,000.
+
+  - title: Covid Lockdown
+    company:
+    location: San Antonio, TX
+    dates: 07/2020 - 12/2020
+
+  - title: Security Guard
+    company: Allied Universal Security Services
+    location: San Antonio, Texas
+    dates: 04/2019 - 06/2020
+    content:
+    - Enforced safety regulations and monitored access control points for various clients including clinics and corporate offices.
+    - Completed required shift logs and reports, highlighting routine activities, suspicious circumstances and critical incidents.
+
+  - title: Assistant Manager
+    company: Performance Bicycle
+    location: San Antonio, Texas
+    dates: 02/2015 - 03/2019
+    content:
+    - Addressed problems quickly and reported clear information while working under minimal supervision.
+    - Reviewed employee performance and provided ongoing feedback and coaching.
+    - Organized team activities to build camaraderie and foster pleasant workplace culture.
+    - Provided guidance and support to junior staff members on daily tasks, projects, and objectives.
+
+skills:
+  title: Skills
+  content:
+  - Conflict resolution
+  - Decision-making
+  - Sales management
+  - Expense tracking
+
+education:
+  title: Education and Training
+  degrees:
+  - degree: Bachelor of Arts
+    field: Anthropology
+    year: 1999
+    school: The University of Texas At San Antonio
+    location: San Antonio, TX
+
+# References
+# Robert Brill Former Manager Performance Bicycle 1(210) 284-6828 George
+# Chaves Former Lead Mechanic Performance Bicycle 1(915) 731-2903
+# George Cabaza Former Manager Bike World 1(210) 385-7163
